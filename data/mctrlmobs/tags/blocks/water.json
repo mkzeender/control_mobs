@@ -1,6 +1,10 @@
 {
 	"values": [
 		"water",
-		"flowing_water"
+		"kelp",
+		"kelp_plant",
+		"seagrass",
+		"tall_seagrass",
+		"bubble_column"
 	]
 }
