@@ -52,13 +52,14 @@ execute if entity @e[tag=iscontrolled,type=#mctrlmobs:sunburned] run tag @s add 
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:floating] run function mctrlmobs:zzz/floating/enter
 execute if entity @e[tag=iscontrolled,type=!#mctrlmobs:melee] run effect give @s weakness 100000 2 true
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:fire_resistant] run effect give @s fire_resistance 100000 0 true
-execute if entity @e[tag=iscontrolled,type=#mctrlmobs:aquatic] run effect give @s minecraft:water_breathing 100000 0 true
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:aquatic] run effect give @s minecraft:conduit_power 100000 0 true
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:aquatic] run tag @s add imaquatic
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:hydrophobic] run tag @s add imhydrophobic
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:wither_immune] run tag @s add idontwither
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:overworldophobic] run tag @s add imoverworldophobic
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:0}] run effect give @s weakness 100000 0 true
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:3}] run effect give @s strength 100000 0 true
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:nocturnal] run effect give @s night_vision 100000 0 true
 
 
 # mobs dont attack their own team

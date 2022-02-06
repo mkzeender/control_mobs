@@ -10,6 +10,10 @@ execute as @e[tag=savedforlater] if score @p[tag=zselected] muserid = @s muserid
 #--------------------------depending on what entity the player is controlling, do these things each tick----------------------
 
 
+
+execute if entity @e[tag=iscontrolled,type=minecraft:dolphin] run effect give @a[distance=0.1..10] minecraft:dolphins_grace 5 0
+
+
 # reset wither invulnerability
 execute if entity @s[tag=witherstarted] run data merge entity @e[type=wither,tag=iscontrolled,limit=1] {Invul:0}
 
