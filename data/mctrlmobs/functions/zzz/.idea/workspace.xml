@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dc14cf8-6272-46af-8793-cc7bb9dd4142" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/enderman/raycast.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/enderman/raycast.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tags/blocks/standable_in.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../tags/blocks/standable_in.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tags/blocks/standable_on.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../tags/blocks/standable_on.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../tags/blocks/tag_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../tags/blocks/tag_generator.py" afterDir="false" />
-    </list>
+    <list default="true" id="3dc14cf8-6272-46af-8793-cc7bb9dd4142" name="Changes" comment="added tag generator for blocks" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

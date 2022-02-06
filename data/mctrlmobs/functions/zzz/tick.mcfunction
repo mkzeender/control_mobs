@@ -4,6 +4,27 @@ execute as @a unless score @s muserid = @s muserid run function mctrlmobs:zzz/fi
 
 
 
+#sleeping through the night requires only normal players to be in bed
+
+scoreboard players set mctrlmobsmanager moperator 0
+scoreboard players set mctrlmobsmanager moperand 0
+execute as @a[nbt={Dimension:"minecraft:overworld"},gamemode=!spectator            ] run scoreboard players add mctrlmobsmanager moperator 1
+execute as @a[nbt={Dimension:"minecraft:overworld"},gamemode=!spectator,tag=!imamob] run scoreboard players add mctrlmobsmanager moperand 100
+scoreboard players operation mctrlmobsmanager moperand /= mctrlmobsmanager moperator
+
+execute if score mctrlmobsmanager moperand matches 000..010 run gamerule playersSleepingPercentage 0
+execute if score mctrlmobsmanager moperand matches 010..020 run gamerule playersSleepingPercentage 10
+execute if score mctrlmobsmanager moperand matches 020..030 run gamerule playersSleepingPercentage 20
+execute if score mctrlmobsmanager moperand matches 030..040 run gamerule playersSleepingPercentage 30
+execute if score mctrlmobsmanager moperand matches 040..050 run gamerule playersSleepingPercentage 40
+execute if score mctrlmobsmanager moperand matches 050..060 run gamerule playersSleepingPercentage 50
+execute if score mctrlmobsmanager moperand matches 060..070 run gamerule playersSleepingPercentage 60
+execute if score mctrlmobsmanager moperand matches 070..080 run gamerule playersSleepingPercentage 70
+execute if score mctrlmobsmanager moperand matches 080..090 run gamerule playersSleepingPercentage 80
+execute if score mctrlmobsmanager moperand matches 090..100 run gamerule playersSleepingPercentage 90
+execute if score mctrlmobsmanager moperand matches 100..100 run gamerule playersSleepingPercentage 100
+
+
 #------------------------------------------- TRIGGERS-----------------------------------------------------------
 # hardcore mode
 execute as @p[scores={mctrlmobs.options.hardcore=0..}] store result storage mctrlmobs:options hardcore byte 1 run scoreboard players get @s mctrlmobs.options.hardcore

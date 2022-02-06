@@ -12,6 +12,7 @@ scoreboard objectives add mhealed dummy
 scoreboard objectives add mfood food
 
 scoreboard objectives add moperator dummy
+scoreboard objectives add moperand dummy
 scoreboard objectives add muserid dummy
 
 scoreboard objectives add dragonsecond dummy
