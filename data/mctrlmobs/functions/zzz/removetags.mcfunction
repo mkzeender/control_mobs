@@ -1,3 +1,7 @@
+tag @s remove imahypnotizer
+tag @s remove imamob
+
+tag @s remove imamonster
 
 tag @s remove imfloating
 tag @s remove imsunburned

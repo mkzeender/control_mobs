@@ -1,15 +1,21 @@
 
 tag @e[tag=iscontrolled] remove iscontrolled
 
-tag @e[distance=0,limit=1,type=!player] add iscontrolled
+tag @e[distance=0,limit=1,type=#mctrlmobs:allmobs,type=!ender_dragon] add iscontrolled
 tag @e[tag=iscontrolled] add savedforlater
 
 scoreboard players operation @e[tag=iscontrolled] muserid = @s muserid
 
-spectate
-gamemode survival
-clear
 
+
+
+
+
+tag @s add imamob
+
+
+gamemode adventure
+clear
 
 
 
@@ -18,20 +24,20 @@ tp @e[tag=iscontrolled] 0 500 0
 
 
 
-# set player's health to mob's current health, rounded up to the nearest 6
+
 execute store result score @s mmobhealth run data get entity @e[tag=iscontrolled,limit=1] Health
-scoreboard players add @s mmobhealth 5
+scoreboard players reset @s mhealed
 
 
 # set player's max health using a chest!
 setblock 1 0 1 chest
-data merge block 1 0 1 {Items:[{Slot:0b,Count:1b,id:"minecraft:leather_leggings",tag:{display:{Name:'[{"text":"Leggings of Life","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Yes, your life is tied to these","italic":false}]']},Unbreakable:1b,Enchantments:[{id:"binding_curse",lvl:1},{id:"vanishing_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.max_health",Amount:1.0,Operation:0,Slot:legs,Name:"generic.max_health",UUID:[I;-122025,16485,20216,-32970]},{AttributeName:"generic.armor",Amount:-5.0,Name:"generic.armor"}]}}]}
+data merge block 1 0 1 {Items:[{Slot:0b,Count:1b,id:"minecraft:leather_leggings",tag:{display:{Name:'[{"text":"Leggings of Life","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Yes, your life is tied to these","italic":false}]']},Unbreakable:1b,Enchantments:[{id:"binding_curse",lvl:1},{id:"minecraft:vanishing_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.max_health",Amount:1.0,Operation:0,Slot:legs,Name:"generic.max_health",UUID:[I;-122025,16485,20216,-32970]},{AttributeName:"generic.armor",Amount:-5.0,Name:"generic.armor"}]}}]}
 execute store result block 1 0 1 Items[{Slot:0b}].tag.AttributeModifiers[0].Amount double 1 run attribute @e[tag=iscontrolled,limit=1] minecraft:generic.max_health get
 item replace entity @s armor.legs from block 1 0 1 container.0
 data remove block 1 0 1 Items[{Slot:0b}]
 setblock 1 0 1 bedrock
 attribute @s minecraft:generic.max_health base set 0
-effect give @s resistance 1 4 true
+#effect give @s resistance 1 4 true
 
 
 # Exit Button
@@ -40,6 +46,7 @@ item replace entity @s hotbar.8 with minecraft:warped_fungus_on_a_stick{display:
 
 
 # categories of entities
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:allmonsters] run tag @s add imamonster
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:inherent_armor] run item replace entity @s armor.chest with iron_chestplate{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:sunburned] run tag @s add imsunburned
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:floating] run function mctrlmobs:zzz/floating/enter
@@ -70,7 +77,7 @@ execute if entity @e[tag=iscontrolled,type=minecraft:pillager] run give @s cross
 execute if entity @e[tag=iscontrolled,type=minecraft:pillager] run give @s arrow{Enchantments:[{id:vanishing_curse,lvl:1}]} 256
 
 #execute if entity @e[tag=iscontrolled,type=minecraft:ravager] run effect give @s minecraft:health_boost 100000 19 true
-execute if entity @e[tag=iscontrolled,type=minecraft:ravager] run effect give @s minecraft:instant_health 10 100 true
+#execute if entity @e[tag=iscontrolled,type=minecraft:ravager] run effect give @s minecraft:instant_health 10 100 true
 execute if entity @e[tag=iscontrolled,type=minecraft:ravager] run effect give @s minecraft:slowness 100000 0 true
 execute if entity @e[tag=iscontrolled,type=minecraft:ravager] run give @s iron_sword{display:{Name:'[{"text":"Ravager Horn","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1},{id:knockback,lvl:2},{id:sharpness,lvl:3}]} 1
 
@@ -84,11 +91,17 @@ execute if entity @e[tag=iscontrolled,type=vindicator] run give @s iron_axe{Ench
 
 # individual entities
 
+execute if entity @e[tag=iscontrolled,type=minecraft:chicken] run effect give @s slow_falling 100000 0 true
+
+
 execute if entity @e[tag=iscontrolled,type=minecraft:creeper] run give @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"BOOM! (or cancel boom)"}]'},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]} 1
 execute if entity @e[tag=iscontrolled,type=minecraft:creeper] run tag @s add imacreeper
 
+execute if entity @e[tag=iscontrolled,type=minecraft:dolphin] run effect give @s minecraft:dolphins_grace 1000000 0 true
 
-execute if entity @e[tag=iscontrolled,nbt={HandItems:[{id:"minecraft:trident"}]}] run give @s trident{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"loyalty",lvl:3}]}
+
+execute if entity @e[tag=iscontrolled,type=minecraft:drowned,nbt={HandItems:[{id:"minecraft:trident"}]}] run give @s trident{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"loyalty",lvl:3}]}
+
 
 
 execute if entity @e[tag=iscontrolled,type=minecraft:guardian      ] run function mctrlmobs:zzz/guardian/enter
@@ -96,8 +109,6 @@ execute if entity @e[tag=iscontrolled,type=minecraft:elder_guardian] run functio
 execute if entity @e[tag=iscontrolled,type=minecraft:elder_guardian] run tag @s add imanelder
 
 
-#execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run effect give @s minecraft:health_boost 100000 19 true
-execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run effect give @s minecraft:instant_health 10 100 true
 execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run effect give @s minecraft:slowness 100000 1 true
 execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run give @s iron_sword{display:{Name:'[{"text":"Golem Arm","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1},{id:knockback,lvl:2},{id:sharpness,lvl:3}]} 1
 execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run item replace entity @s armor.head with iron_helmet{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
@@ -121,12 +132,12 @@ execute if entity @e[tag=iscontrolled,type=minecraft:spider     ] run tag @s add
 execute if entity @e[tag=iscontrolled,type=minecraft:cave_spider] run tag @s add imaspider
 
 
-execute if entity @e[tag=iscontrolled,type=minecraft:piglin] run give @s crossbow{Enchantments:[{id:vanishing_curse,lvl:1},{id:infinity,lvl:1}]}
-execute if entity @e[tag=iscontrolled,type=minecraft:piglin] run give @s arrow{Enchantments:[{id:vanishing_curse,lvl:1}]} 256
+execute if entity @e[tag=iscontrolled,type=minecraft:piglin] unless entity @e[tag=iscontrolled,type=piglin,nbt={HandItems:[{id:"minecraft:golden_sword"}]}] run give @s crossbow{Enchantments:[{id:vanishing_curse,lvl:1},{id:infinity,lvl:1}]}
+execute if entity @e[tag=iscontrolled,type=minecraft:piglin] unless entity @e[tag=iscontrolled,type=piglin,nbt={HandItems:[{id:"minecraft:golden_sword"}]}] run give @s arrow{Enchantments:[{id:vanishing_curse,lvl:1}]} 256
+execute if entity @e[tag=iscontrolled,type=minecraft:piglin,nbt={HandItems:[{id:"minecraft:golden_sword"}]}] run give @s golden_sword{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
 
 execute if entity @e[tag=iscontrolled,type=minecraft:piglin_brute] run give @s golden_axe{Unbreakable:1b,Enchantments:[{id:vanishing_curse,lvl:1}]}
 execute if entity @e[tag=iscontrolled,type=minecraft:piglin_brute] run effect give @s minecraft:strength 100000 0 true
-#execute if entity @e[tag=iscontrolled,type=minecraft:piglin_brute] run effect give @s minecraft:health_boost 100000 3 true
 
 execute if entity @e[tag=iscontrolled,type=minecraft:zombified_piglin] run give @s golden_sword{Unbreakable:1b,Enchantments:[{id:vanishing_curse,lvl:1}]}
 execute if entity @e[tag=iscontrolled,type=minecraft:zombified_piglin] run effect give @s minecraft:fire_resistance 1000000 0 true
@@ -171,6 +182,7 @@ execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~ ~ ~ {Item:{id:ender_pearl,Count:64b,tag:{display:{Name:'[{"text":"Ender Pearl","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~ ~ ~ {Item:{id:ender_pearl,Count:64b,tag:{display:{Name:'[{"text":"Ender Pearl","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run item replace entity @s armor.feet with minecraft:leather_boots{Enchantments:[{id:feather_falling,lvl:255},{id:vanishing_curse,lvl:1},{id:unbreaking,lvl:3}]}
+execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run gamemode survival
 
 
 execute if entity @e[tag=iscontrolled,type=minecraft:witch] run give @s minecraft:potion{Enchantments:[{id:vanishing_curse,lvl:1}],Potion:"minecraft:water",CustomPotionEffects:[{Id:10,Amplifier:1,Duration:1200}],display:{Name:"\"Regeneration\""}} 1
@@ -182,8 +194,8 @@ execute if entity @e[tag=iscontrolled,type=minecraft:witch] run give @s minecraf
 execute if entity @e[tag=iscontrolled,type=minecraft:wither] run function mctrlmobs:zzz/wither/enter
 
 
-# fill up the player's health
-effect give @s minecraft:instant_health 10 100 true
+# 1-second invulnerability if needed to fill up the player's health
+execute if score @s mmobhealth > @s mhealth run effect give @s minecraft:resistance 1 4 true
 
 # announce the player's transition
 title @a actionbar [{"selector":"@s"}, {"color":"yellow", "text":" is now a "}, {"selector":"@e[tag=iscontrolled]"}]

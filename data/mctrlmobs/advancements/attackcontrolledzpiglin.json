@@ -1,0 +1,17 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "criteria": {
+        "attackcontrolledzpiglin": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:player",
+                    "nbt": "{Tags:[\"imazpiglin\"]}"
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "mctrlmobs:zzz/events/attackcontrolledzpiglin"
+    }
+}

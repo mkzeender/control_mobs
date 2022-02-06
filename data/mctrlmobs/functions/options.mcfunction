@@ -1,0 +1,9 @@
+execute unless entity @s[nbt={Inventory:[{tag:{OptionsBook:1b}}]}] run give @s written_book{OptionsBook:1b,pages:['["",{"text":"Control Mobs Options","underlined":true},{"text":"\\n\\n","color":"reset"},{"text":"Warning: Once set, these options can only be changed using the command:\\n/function mctrlmobs:options.","color":"red"},{"text":"\\n","color":"reset"},{"text":"Continue","underlined":true,"color":"blue","clickEvent":{"action":"change_page","value":2}}]','["",{"text":"Become a mob controller on death-- pseudo hardcore mode\\n"},{"text":"enable ","color":"green","clickEvent":{"action":"run_command","value":"/trigger mctrlmobs.options.hardcore set 1"}},{"text":"disable","color":"red","clickEvent":{"action":"run_command","value":"/trigger mctrlmobs.options.hardcore set 0"}},{"text":"\\n\\nAllow crafting of a mob controller using\\n","color":"reset"},{"text":"string ","color":"gray","hoverEvent":{"action":"show_item","contents":{"id":"string"}}},{"text":"+ ","color":"reset"},{"text":"clock","color":"gray","hoverEvent":{"action":"show_item","contents":{"id":"clock"}}},{"text":"\\n","color":"reset"},{"text":"enable ","color":"green","clickEvent":{"action":"run_command","value":"/trigger mctrlmobs.options.craft set 1"}},{"text":"disable","color":"red","clickEvent":{"action":"run_command","value":"/trigger mctrlmobs.options.craft set 0"}},{"text":"\\n\\n","color":"reset"},{"text":"Click Here","underlined":true,"color":"blue","clickEvent":{"action":"run_command","value":"/function mctrlmobs:options"}},{"text":" to re-unlock Options\\n(Operators only)\\n ","color":"reset"}]'],title:Options,author:'[server]'}
+
+
+scoreboard players enable @s mctrlmobs.options.craft
+scoreboard players set @s mctrlmobs.options.craft -1
+
+
+scoreboard players enable @s mctrlmobs.options.hardcore
+scoreboard players set @s mctrlmobs.options.hardcore -1

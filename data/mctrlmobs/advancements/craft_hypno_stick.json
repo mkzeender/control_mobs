@@ -1,0 +1,15 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "criteria": {
+        "hypnostick": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "mctrlmobs:hypno_stick"
+            }
+        }
+    },
+    "rewards": {
+        "experience": 1,
+        "function": "mctrlmobs:zzz/events/craft_hypno_stick"
+    }
+}

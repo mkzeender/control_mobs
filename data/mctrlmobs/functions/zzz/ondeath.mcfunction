@@ -3,6 +3,7 @@ scoreboard players reset @s mctrdeathcount
 kill @e[type=item,nbt={Item:{id:"minecraft:player_head"}}]
 
 gamemode spectator @s[tag=ctrlmobs]
+team leave @s
 
 tag @e[tag=mselected] remove mselected
 tag @e[tag=zselected] remove zselected
@@ -17,6 +18,17 @@ kill @e[tag=mselected]
 
 
 
+#if keepinventory is on, ignore it
+execute as @s[tag=imamob] run tag @s add wasamob
+
+
+#if you entered from survival mode:
+gamemode survival @s[tag=imahypnotizer]
+execute if entity @s[tag=imahypnotizer] run attribute @s minecraft:generic.max_health base set 20
+
+
+#hardcore mode!
+execute if data storage mctrlmobs:options {hardcore:1b} run function mctrlmobs:mob_controller
 
 # death messages
 
@@ -29,7 +41,6 @@ execute if entity @s[tag=imhydrophobic] at @s unless block ~ ~1 ~ water if block
 execute if entity @s[tag=imsunburned,scores={daytime=0..12000},nbt={Dimension:"minecraft:overworld"}] at @s if blocks ~ ~1 ~ ~ ~200 ~ 0 200 0 masked run tellraw @a [{"selector":"@s"}, {"text":" forgot sunscreen"}]
 
 
-
-
-
+# get rid of old tags
 function mctrlmobs:zzz/removetags
+

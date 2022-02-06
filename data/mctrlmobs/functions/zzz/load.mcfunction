@@ -8,6 +8,7 @@ scoreboard objectives add gillair dummy
 scoreboard objectives add mhealth health "Health"
 scoreboard objectives add mmobhealth dummy
 scoreboard objectives add mmaxhealth dummy
+scoreboard objectives add mhealed dummy
 scoreboard objectives add mfood food
 
 scoreboard objectives add moperator dummy
@@ -25,7 +26,12 @@ scoreboard objectives add mctrdeathwait health
 scoreboard objectives add mctrdeathtick dummy
 scoreboard objectives add mctrdeathcount deathCount
 
+scoreboard objectives add mctrlmobs.options.hardcore trigger
+scoreboard objectives add mctrlmobs.options.craft trigger
 
+
+#players won't be healed anymore
+scoreboard players reset * mhealed
 
 
 team add ctrlmobs "Control Mobs"

@@ -3,7 +3,7 @@ scoreboard players set @s pressedbutton 0
 #--------------------------------- RUNS WHEN THE PLAYER RIGHT CLICKS THE CARROT ON A STICK
 
 execute if entity @s[tag=imfloating] run effect give @s minecraft:levitation 1 4 true
-execute if entity @s[tag=imfloating] run effect give @s minecraft:levitation 8 0 true
+execute if entity @s[tag=imfloating] run effect give @s minecraft:levitation 20 0 true
 
 
 
@@ -18,8 +18,8 @@ effect give @s[tag=imablow] minecraft:slowness 2 3 true
 
 
 
-execute if entity @s[tag=imanevoker] run summon minecraft:evoker_fangs ^ ^ ^2
-execute if entity @s[tag=imanevoker] run summon minecraft:evoker_fangs ^ ^ ^3
-execute if entity @s[tag=imanevoker] run summon minecraft:evoker_fangs ^ ^ ^4
-execute if entity @s[tag=imanevoker] run summon minecraft:evoker_fangs ^ ^ ^5
-execute if entity @s[tag=imanevoker] run summon minecraft:evoker_fangs ^ ^ ^6
+execute if entity @s[tag=imanevoker] rotated as @s rotated ~ 0 run summon minecraft:evoker_fangs ^ ^ ^2
+execute if entity @s[tag=imanevoker] rotated as @s rotated ~ 0 run summon minecraft:evoker_fangs ^ ^ ^3
+execute if entity @s[tag=imanevoker] rotated as @s rotated ~ 0 run summon minecraft:evoker_fangs ^ ^ ^4
+execute if entity @s[tag=imanevoker] rotated as @s rotated ~ 0 run summon minecraft:evoker_fangs ^ ^ ^5
+execute if entity @s[tag=imanevoker] rotated as @s rotated ~ 0 run summon minecraft:evoker_fangs ^ ^ ^6

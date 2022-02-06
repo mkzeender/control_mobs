@@ -1,0 +1,1 @@
+give @s clock{Enchantments:[{}],hypnostick:1b,display:{Name:'{"text":"Mob Mind Hypnotizer"}'}}

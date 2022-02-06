@@ -1,0 +1,2 @@
+execute at @s rotated as @s positioned ^ ^ ^1.5 at @e[type=#mctrlmobs:allmobs,distance=0..2, limit=1] run item modify entity @s weapon.mainhand mctrlmobs:decrease_count
+execute at @s rotated as @s positioned ^ ^ ^1.5 at @e[type=#mctrlmobs:allmobs,distance=0..2, limit=1] run function mctrlmobs:zzz/enter_as_survivalist

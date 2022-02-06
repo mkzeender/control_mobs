@@ -4,5 +4,7 @@ scoreboard players set @s mctrdeathtick 0
 
 tp @s[tag=ctrlmobs] @p[tag=!ctrlmobs]
 
-execute as @s[tag=ctrlmobs] run kill @e[x=0,y=-74,z=0,dx=1,dy=1,dz=1]
-execute as @s[tag=ctrlmobs] run gamemode spectator
+# if keepinventory is on, still clear player's illegal items
+execute as @s[tag=wasamob] run clear @s player_head
+execute as @s[tag=wasamob] run function mctrlmobs:zzz/inventory/dropinventory
+execute as @s[tag=wasamob] run tag @s remove wasamob
