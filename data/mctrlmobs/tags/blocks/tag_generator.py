@@ -12,10 +12,12 @@ solid = [block['name'] for block in blockdata if block['boundingBox'] == 'block'
 
 permeable = [block['name'] for block in blockdata if block['boundingBox'] == 'empty']
 
+not_standable_on = ['magma_block', 'cactus']
 
 standable_on = []
 for block in solid:
-    if not ('wall' in block and 'wall_' not in block) and not ('fence' in block and 'fence_' not in block):
+    if not ('wall' in block and 'wall_' not in block) and not ('fence' in block and 'fence_' not in block) \
+            and block not in not_standable_on:
         standable_on.append(block)
 
 write_tag('standable_on.json', standable_on)
@@ -24,7 +26,7 @@ write_tag('standable_on.json', standable_on)
 
 
 
-not_standable_in = ['fire', 'soul_fire', 'lava']
+not_standable_in = ['fire', 'soul_fire', 'lava', 'sweet_berry_bush']
 
 standable_in = [x for x in permeable if x not in not_standable_in]
 

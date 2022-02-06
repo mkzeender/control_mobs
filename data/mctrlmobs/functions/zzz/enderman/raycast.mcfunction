@@ -2,13 +2,17 @@
 data modify storage mctrlmobs:vars SuccessLevel set value 0
 execute store success storage mctrlmobs:vars SuccessLevel byte 1 if block ~ ~-1 ~ #mctrlmobs:standable_on if block ~ ~ ~ #mctrlmobs:standable_in if block ~ ~1 ~ #mctrlmobs:standable_in if block ~ ~2 ~ #mctrlmobs:standable_in unless block ~ ~ ~ #mctrlmobs:water unless block ~ ~1 ~ #mctrlmobs:water
 
-#tp to center of block
+
+
+#tp to center of block, play sound and show particles at source and destingation
 execute if data storage mctrlmobs:vars {SuccessLevel:1b} at @s anchored eyes run particle minecraft:portal ^ ^ ^ 0.1 0.1 0.1 0.5 100 force
 
 execute if data storage mctrlmobs:vars {SuccessLevel:1b} align xyz run tp @s ~0.5 ~ ~0.5
 
 execute if data storage mctrlmobs:vars {SuccessLevel:1b} at @s anchored eyes run particle minecraft:portal ^ ^ ^ 0.1 0.1 0.1 0.5 100 force
 execute if data storage mctrlmobs:vars {SuccessLevel:1b} run playsound minecraft:entity.enderman.teleport hostile @a ~ ~ ~ 1
+
+
 
 
 #continue raycast otherwise
