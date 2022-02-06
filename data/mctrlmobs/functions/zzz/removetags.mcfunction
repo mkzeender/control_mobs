@@ -11,6 +11,7 @@ tag @s remove imaghast
 tag @s remove imablaze
 tag @s remove imazpiglin
 tag @s remove imaspider
+tag @s remove imanenderman
 
 tag @s remove imaguardian
 tag @s remove imanelder

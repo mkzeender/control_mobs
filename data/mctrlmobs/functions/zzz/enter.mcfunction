@@ -171,19 +171,10 @@ execute if entity @e[tag=iscontrolled,type=minecraft:wither_skeleton] run summon
 execute if entity @e[tag=iscontrolled,type=minecraft:wither_skeleton] run summon item ~ ~ ~ {Item:{id:"minecraft:splash_potion", Count:64b, tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:20,Duration:200}],display:{Name:"\"Wither Potion\""},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
 
 
-#execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run effect give @s minecraft:health_boost 100000 4 true
+execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run give @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Teleport"}]'},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]} 1
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run effect give @s minecraft:strength 100000 0 true
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~ ~ ~ {Item:{id:ender_pearl,Count:64b,tag:{display:{Name:'[{"text":"Ender Pearl","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~ ~ ~ {Item:{id:ender_pearl,Count:64b,tag:{display:{Name:'[{"text":"Ender Pearl","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~ ~ ~ {Item:{id:ender_pearl,Count:64b,tag:{display:{Name:'[{"text":"Ender Pearl","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~ ~ ~ {Item:{id:ender_pearl,Count:64b,tag:{display:{Name:'[{"text":"Ender Pearl","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~ ~ ~ {Item:{id:ender_pearl,Count:64b,tag:{display:{Name:'[{"text":"Ender Pearl","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~ ~ ~ {Item:{id:ender_pearl,Count:64b,tag:{display:{Name:'[{"text":"Ender Pearl","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~ ~ ~ {Item:{id:ender_pearl,Count:64b,tag:{display:{Name:'[{"text":"Ender Pearl","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~ ~ ~ {Item:{id:ender_pearl,Count:64b,tag:{display:{Name:'[{"text":"Ender Pearl","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run summon item ~ ~ ~ {Item:{id:ender_pearl,Count:64b,tag:{display:{Name:'[{"text":"Ender Pearl","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run item replace entity @s armor.feet with minecraft:leather_boots{Enchantments:[{id:feather_falling,lvl:255},{id:vanishing_curse,lvl:1},{id:unbreaking,lvl:3}]}
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run gamemode survival
+execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run tag @s add imanenderman
 
 
 execute if entity @e[tag=iscontrolled,type=minecraft:witch] run give @s minecraft:potion{Enchantments:[{id:vanishing_curse,lvl:1}],Potion:"minecraft:water",CustomPotionEffects:[{Id:10,Amplifier:1,Duration:1200}],display:{Name:"\"Regeneration\""}} 1

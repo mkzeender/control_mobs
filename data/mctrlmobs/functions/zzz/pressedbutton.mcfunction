@@ -5,6 +5,7 @@ scoreboard players set @s pressedbutton 0
 execute if entity @s[tag=imfloating] run effect give @s minecraft:levitation 1 4 true
 execute if entity @s[tag=imfloating] run effect give @s minecraft:levitation 20 0 true
 
+execute if entity @s[tag=imanenderman] at @s anchored eyes positioned ^ ^ ^5 run function mctrlmobs:zzz/enderman/raycast
 
 
 
