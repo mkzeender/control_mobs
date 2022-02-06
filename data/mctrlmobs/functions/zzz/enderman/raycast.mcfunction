@@ -18,3 +18,4 @@ execute if data storage mctrlmobs:vars {SuccessLevel:1b} run playsound minecraft
 #continue raycast otherwise
 execute unless data storage mctrlmobs:vars {SuccessLevel:1b} unless entity @s[distance=0..100] positioned ^ ^ ^0.5 run tellraw @s {"color":"red", "text": "Could not find valid teleporting location"}
 execute unless data storage mctrlmobs:vars {SuccessLevel:1b} if entity @s[distance=0..100] positioned ^ ^ ^0.5 run function mctrlmobs:zzz/enderman/raycast
+

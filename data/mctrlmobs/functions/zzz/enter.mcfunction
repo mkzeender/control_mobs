@@ -60,6 +60,7 @@ execute if entity @e[tag=iscontrolled,type=#mctrlmobs:overworldophobic] run tag 
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:0}] run effect give @s weakness 100000 0 true
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:3}] run effect give @s strength 100000 0 true
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:nocturnal] run effect give @s night_vision 100000 0 true
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:poisonous] run tag @s add impoisonous
 
 
 # mobs dont attack their own team
@@ -163,12 +164,6 @@ execute if entity @e[tag=iscontrolled,type=minecraft:ghast] run tag @s add imagh
 
 
 execute if entity @e[tag=iscontrolled,type=minecraft:wither_skeleton] run give @s stone_sword{Enchantments:[{id:vanishing_curse,lvl:1}]}
-execute if entity @e[tag=iscontrolled,type=minecraft:wither_skeleton] run summon item ~ ~ ~ {Item:{id:"minecraft:splash_potion", Count:64b, tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:20,Duration:200}],display:{Name:"\"Wither Potion\""},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:wither_skeleton] run summon item ~ ~ ~ {Item:{id:"minecraft:splash_potion", Count:64b, tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:20,Duration:200}],display:{Name:"\"Wither Potion\""},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:wither_skeleton] run summon item ~ ~ ~ {Item:{id:"minecraft:splash_potion", Count:64b, tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:20,Duration:200}],display:{Name:"\"Wither Potion\""},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:wither_skeleton] run summon item ~ ~ ~ {Item:{id:"minecraft:splash_potion", Count:64b, tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:20,Duration:200}],display:{Name:"\"Wither Potion\""},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:wither_skeleton] run summon item ~ ~ ~ {Item:{id:"minecraft:splash_potion", Count:64b, tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:20,Duration:200}],display:{Name:"\"Wither Potion\""},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-execute if entity @e[tag=iscontrolled,type=minecraft:wither_skeleton] run summon item ~ ~ ~ {Item:{id:"minecraft:splash_potion", Count:64b, tag:{Potion:"minecraft:water",CustomPotionEffects:[{Id:20,Duration:200}],display:{Name:"\"Wither Potion\""},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
 
 
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run give @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Teleport"}]'},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]} 1

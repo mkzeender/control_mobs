@@ -27,8 +27,10 @@ tag @s remove dragontick
 
 tag @s remove witherstarted
 tag @s remove imawither
+
 tag @s remove idontwither
 tag @s remove imoverworldophobic
+tag @s remove impoisonous
 
 tag @s remove perching
 tag @s remove circling
