@@ -1,3 +1,9 @@
+#keep important chunks loaded
+execute in minecraft:overworld run forceload add 0 0
+execute in minecraft:the_nether run forceload add 0 0
+execute in minecraft:the_end run forceload add 0 0
+
+
 
 
 # when a player logs into the server

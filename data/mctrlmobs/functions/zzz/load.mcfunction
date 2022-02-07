@@ -39,8 +39,6 @@ scoreboard objectives add mctrlmobs.options.craft trigger
 team add ctrlmobs "Control Mobs"
 team add ctrlpiglins "Control Piglins"
 
-forceload add 0 0
-execute in minecraft:the_nether run forceload add 0 0
 
 
 bossbar add mctrlmobs:ender_dragon "Ender Dragon"
