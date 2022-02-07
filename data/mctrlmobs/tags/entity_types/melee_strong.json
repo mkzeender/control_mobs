@@ -1,0 +1,16 @@
+{
+	"__comment": "Mobs that should do extra melee damage. Those with melee weapons are not included.",
+	"values": [
+		"blaze",
+		"cave_spider",
+		"drowned",
+		"ender_dragon",
+		"enderman",
+		"husk",
+		"polar_bear",
+		"spider",
+		"wither",
+		"zombie",
+		"zombie_villager"
+	]
+}
