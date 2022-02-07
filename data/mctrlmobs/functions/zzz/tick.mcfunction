@@ -190,22 +190,22 @@ execute as @a[tag=imamob] at @s run function mctrlmobs:zzz/mctrltick
 
 
 # chest tick
-execute as @a at @s rotated as @s positioned ^ ^ ^0.2 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^0.4 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^0.6 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^0.8 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^1.0 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^1.2 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^1.4 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^1.6 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^1.8 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^2.0 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^2.2 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^2.4 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^2.6 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^2.8 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^3.0 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^3.2 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^3.4 run function mctrlmobs:zzz/inventory/chesttick
-execute as @a at @s rotated as @s positioned ^ ^ ^3.6 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^0.2 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^0.4 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^0.6 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^0.8 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^1.0 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^1.2 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^1.4 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^1.6 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^1.8 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^2.0 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^2.2 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^2.4 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^2.6 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^2.8 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^3.0 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^3.2 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^3.4 run function mctrlmobs:zzz/inventory/chesttick
+execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^3.6 run function mctrlmobs:zzz/inventory/chesttick
 
