@@ -68,7 +68,7 @@ execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:0}] ru
 
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:3}] run effect give @s strength 100000 0 true
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:3}] run effect give @s jump_boost 100000 3 true
-execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:3}] run effect give @s slowness 100000 3 true
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs] run effect give @s slowness 100000 3 true
 
 
 
