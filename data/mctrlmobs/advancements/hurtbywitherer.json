@@ -5,8 +5,14 @@
             "trigger": "minecraft:entity_hurt_player",
             "conditions": {
                 "damage": {
+					"blocked": false,
+					"type": {
+                        "is_explosion": false,
+                        "is_fire": false,
+                        "is_magic": false,
+                        "is_projectile": false
+                    },
                     "source_entity": {
-                        "type": "minecraft:player",
                         "nbt": "{Tags:[\"imawitherer\"]}"
                     }
                 }
