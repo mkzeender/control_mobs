@@ -1,0 +1,15 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "criteria": {
+        "exitendportal": {
+            "trigger": "minecraft:changed_dimension",
+            "conditions": {
+                "from": "the_end",
+                "to": "overworld"
+            }
+        }
+    },
+    "rewards": {
+        "function": "mctrlmobs:zzz/events/exitendportal"
+    }
+}

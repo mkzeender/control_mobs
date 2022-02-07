@@ -12,27 +12,23 @@ gamemode spectator
 
 team leave @s
 
-tag @e[tag=mselected] remove mselected
-tag @e[tag=zselected] remove zselected
-
-tag @s add zselected
-
+function mctrlmobs:zzz/select_controlled_mob
 
 # move the old entity back here
-execute as @e[tag=savedforlater] if score @p[tag=zselected] muserid = @s muserid run tag @s add mselected
-tp @e[tag=mselected] @s
-execute as @e[tag=mselected] run data merge entity @s {PersistenceRequired:false,NoAI:false,Invulnerable:false}
+
+tp @e[tag=iscontrolled] @s
+execute as @e[tag=iscontrolled] run data merge entity @s {PersistenceRequired:false,NoAI:false,Invulnerable:false}
 
 # set the mob's health to your health, as long as it's properly set
-data modify entity @e[tag=mselected,limit=1] Health set from entity @s[scores={mhealed=1}] Health
+data modify entity @e[tag=iscontrolled,limit=1] Health set from entity @s[scores={mhealed=1}] Health
 
 
 #set certain mob properties
-data modify entity @e[tag=mselected,limit=1] Fire set from entity @s[scores={mhealed=1}] Fire
+data modify entity @e[tag=iscontrolled,limit=1] Fire set from entity @s Fire
 
 
 
-tag @e[tag=mselected] remove savedforlater
+tag @e[tag=iscontrolled] remove savedforlater
 
 
 

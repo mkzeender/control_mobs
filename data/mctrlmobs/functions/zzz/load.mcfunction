@@ -13,7 +13,9 @@ scoreboard objectives add mfood food
 
 scoreboard objectives add moperator dummy
 scoreboard objectives add moperand dummy
+
 scoreboard objectives add muserid dummy
+scoreboard objectives add mctrlmobs.isloggedin dummy
 
 scoreboard objectives add dragonsecond dummy
 scoreboard objectives add dragoncountdown dummy
@@ -31,8 +33,7 @@ scoreboard objectives add mctrlmobs.options.hardcore trigger
 scoreboard objectives add mctrlmobs.options.craft trigger
 
 
-#players won't be healed anymore
-scoreboard players reset * mhealed
+
 
 
 team add ctrlmobs "Control Mobs"

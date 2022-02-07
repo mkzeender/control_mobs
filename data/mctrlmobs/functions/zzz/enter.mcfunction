@@ -24,7 +24,7 @@ tp @e[tag=iscontrolled] 0 500 0
 
 
 
-
+# setting health
 execute store result score @s mmobhealth run data get entity @e[tag=iscontrolled,limit=1] Health
 scoreboard players reset @s mhealed
 

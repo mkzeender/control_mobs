@@ -1,5 +1,7 @@
 scoreboard players set @s pressedbutton 0
 
+function mctrlmobs:zzz/select_controlled_mob
+
 #--------------------------------- RUNS WHEN THE PLAYER RIGHT CLICKS THE CARROT ON A STICK
 
 execute if entity @s[tag=imfloating] run effect give @s minecraft:levitation 1 4 true

@@ -1,6 +1,16 @@
 
-# giving players a user id
+
+# when a player logs into the server
+execute as @a[scores={mctrlmobs.isloggedin=0}] run function mctrlmobs:zzz/join
+
+#detect who is logged into the server
+scoreboard players set * mctrlmobs.isloggedin 0
+scoreboard players set @a mctrlmobs.isloggedin 1
+
+#first login
 execute as @a unless score @s muserid = @s muserid run function mctrlmobs:zzz/firstjoin
+
+
 
 
 
@@ -69,11 +79,12 @@ execute as @a[tag=imamob,scores={mhealed=1}] run scoreboard players operation @s
 #give player regen until they are at the correct health
 execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] if score @s mmobhealth >= @s mhealth unless entity @s[nbt={ActiveEffects:[{Id:10b,Amplifier:5b}]}] run effect give @s regeneration 100000 5 true
 execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] if score @s mmobhealth <= @s mhealth run effect clear @s minecraft:regeneration
-execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] if score @s mmobhealth = @s mhealth run scoreboard players set @s mhealed 1
 
 #decrease player health if needed
 execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] if score @s mmobhealth < @s mhealth run effect give @s poison 1 4 true
 execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] if score @s mmobhealth >= @s mhealth run effect clear @s poison
+
+execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] if score @s mmobhealth = @s mhealth run scoreboard players set @s mhealed 1
 
 
 
