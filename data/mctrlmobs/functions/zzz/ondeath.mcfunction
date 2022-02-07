@@ -25,6 +25,8 @@ execute as @s[tag=imamob] run tag @s add wasamob
 #if you entered from survival mode:
 gamemode survival @s[tag=imahypnotizer]
 execute if entity @s[tag=imahypnotizer] run attribute @s minecraft:generic.max_health base set 20
+execute if entity @s[tag=imahypnotizer] run attribute @s minecraft:generic.attack_damage base set 1
+
 
 
 #hardcore mode!

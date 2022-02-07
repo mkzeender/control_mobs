@@ -47,20 +47,31 @@ item replace entity @s hotbar.8 with minecraft:warped_fungus_on_a_stick{display:
 
 # categories of entities
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:allmonsters] run tag @s add imamonster
-execute if entity @e[tag=iscontrolled,type=#mctrlmobs:inherent_armor] run item replace entity @s armor.chest with iron_chestplate{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:inherent_armor] run item replace entity @s armor.feet with iron_boots{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:sunburned] run tag @s add imsunburned
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:floating] run function mctrlmobs:zzz/floating/enter
 execute if entity @e[tag=iscontrolled,type=!#mctrlmobs:melee] run effect give @s weakness 100000 2 true
+execute if entity @e[tag=iscontrolled,type=!#mctrlmobs:melee_strong] run attribute @s minecraft:generic.attack_damage base set 1
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:melee_strong] run attribute @s minecraft:generic.attack_damage base set 3
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:fire_resistant] run effect give @s fire_resistance 100000 0 true
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:aquatic] run effect give @s minecraft:conduit_power 100000 0 true
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:aquatic] run tag @s add imaquatic
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:hydrophobic] run tag @s add imhydrophobic
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:wither_immune] run tag @s add idontwither
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:overworldophobic] run tag @s add imoverworldophobic
-execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:0}] run effect give @s weakness 100000 0 true
-execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:3}] run effect give @s strength 100000 0 true
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:nocturnal] run effect give @s night_vision 100000 0 true
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:poisonous] run tag @s add impoisonous
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:witherers] run tag @s add imawitherer
+
+# slime and magma_cube
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:0}] run effect give @s weakness 100000 0 true
+
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:3}] run effect give @s strength 100000 0 true
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:3}] run effect give @s jump_boost 100000 3 true
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:cube_mobs,nbt={Size:3}] run effect give @s slowness 100000 3 true
+
+
+
 
 
 # mobs dont attack their own team
@@ -73,6 +84,7 @@ execute if entity @e[tag=iscontrolled,type=#mctrlmobs:piglinteam] run team join 
 # pillagers
 
 execute if entity @e[tag=iscontrolled,type=minecraft:evoker] run give @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Evoker Fangs"}]'},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]} 1
+execute if entity @e[tag=iscontrolled,type=minecraft:evoker] run gamemode survival
 execute if entity @e[tag=iscontrolled,type=minecraft:evoker] run tag @s add imanevoker
 
 execute if entity @e[tag=iscontrolled,type=minecraft:pillager] run give @s crossbow{Enchantments:[{id:vanishing_curse,lvl:1},{id:infinity,lvl:1}]}
@@ -127,7 +139,8 @@ execute if entity @e[tag=iscontrolled,type=minecraft:hoglin] run item replace en
 
 
 execute if entity @e[tag=iscontrolled,type=#minecraft:skeletons,type=!wither_skeleton] run give @s bow{Enchantments:[{id:vanishing_curse,lvl:1},{id:infinity,lvl:1}]}
-execute if entity @e[tag=iscontrolled,type=#minecraft:skeletons,type=!wither_skeleton] run give @s arrow{Enchantments:[{id:vanishing_curse,lvl:1}]} 1
+execute if entity @e[tag=iscontrolled,type=minecraft:skeleton] run give @s arrow{Enchantments:[{id:vanishing_curse,lvl:1}]} 1
+execute if entity @e[tag=iscontrolled,type=minecraft:stray] run give @s tipped_arrow{CustomPotionColor:11594239,display:{Name:'[{"text":"Arrow of Slowness","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}],CustomPotionEffects:[{Id:2,Duration:140,Amplifier:0}]} 256
 
 
 execute if entity @e[tag=iscontrolled,type=minecraft:spider     ] run tag @s add imaspider
@@ -138,11 +151,9 @@ execute if entity @e[tag=iscontrolled,type=minecraft:piglin] unless entity @e[ta
 execute if entity @e[tag=iscontrolled,type=minecraft:piglin] unless entity @e[tag=iscontrolled,type=piglin,nbt={HandItems:[{id:"minecraft:golden_sword"}]}] run give @s arrow{Enchantments:[{id:vanishing_curse,lvl:1}]} 256
 execute if entity @e[tag=iscontrolled,type=minecraft:piglin,nbt={HandItems:[{id:"minecraft:golden_sword"}]}] run give @s golden_sword{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
 
-execute if entity @e[tag=iscontrolled,type=minecraft:piglin_brute] run give @s golden_axe{Unbreakable:1b,Enchantments:[{id:vanishing_curse,lvl:1}]}
-execute if entity @e[tag=iscontrolled,type=minecraft:piglin_brute] run effect give @s minecraft:strength 100000 0 true
+execute if entity @e[tag=iscontrolled,type=minecraft:piglin_brute] run give @s golden_axe{Unbreakable:1b,Enchantments:[{id:sharpness,lvl:7},{id:vanishing_curse,lvl:1}]}
 
 execute if entity @e[tag=iscontrolled,type=minecraft:zombified_piglin] run give @s golden_sword{Unbreakable:1b,Enchantments:[{id:vanishing_curse,lvl:1}]}
-execute if entity @e[tag=iscontrolled,type=minecraft:zombified_piglin] run effect give @s minecraft:fire_resistance 1000000 0 true
 execute if entity @e[tag=iscontrolled,type=minecraft:zombified_piglin] run tag @s add imazpiglin
 
 
@@ -167,7 +178,6 @@ execute if entity @e[tag=iscontrolled,type=minecraft:wither_skeleton] run give @
 
 
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run give @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Teleport"}]'},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]} 1
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run effect give @s minecraft:strength 100000 0 true
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run gamemode survival
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run tag @s add imanenderman
 

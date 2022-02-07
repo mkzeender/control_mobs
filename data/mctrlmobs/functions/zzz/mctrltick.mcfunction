@@ -9,6 +9,8 @@ execute as @e[tag=savedforlater] if score @p[tag=zselected] muserid = @s muserid
 
 #--------------------------depending on what entity the player is controlling, do these things each tick----------------------
 
+#convert arrows to infinity arrows
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:infinity_arrows] as @e[type=#minecraft:arrows,distance=0..10] run data merge entity @s {pickup:0b}
 
 
 execute if entity @e[tag=iscontrolled,type=minecraft:dolphin] run effect give @a[distance=0.1..10] minecraft:dolphins_grace 5 0
