@@ -3,7 +3,7 @@
 
 summon fireball ~ ~ ~
 
-
+tag @e remove selected
 tag @e[type=minecraft:fireball,limit=1,sort=nearest] add selected
 function mctrlmobs:zzz/projectiles/pdata
 

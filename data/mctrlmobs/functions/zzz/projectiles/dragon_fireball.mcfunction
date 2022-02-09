@@ -3,13 +3,14 @@
 
 summon dragon_fireball ~ ~ ~
 
+tag @e remove selected
 tag @e[type=minecraft:dragon_fireball,limit=1,sort=nearest] add selected
 function mctrlmobs:zzz/projectiles/pdata
 
 
 
 #set owner of fireball
-#data modify entity @e[type=minecraft:fireball,limit=1,sort=nearest] Owner set from entity @p[tag=imadragon] UUID
+data modify entity @e[type=minecraft:fireball,limit=1,sort=nearest] Owner set from entity @p[tag=imadragon] UUID
 
 
 
