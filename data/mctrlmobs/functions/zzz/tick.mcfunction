@@ -17,7 +17,8 @@ scoreboard players set @a mctrlmobs.isloggedin 1
 execute as @a unless score @s muserid = @s muserid run function mctrlmobs:zzz/firstjoin
 
 
-
+#clear illegal items
+kill @e[type=item,nbt={Item:{tag:{CustomTags:["mctrlmobs.illegal"]}}}]
 
 
 #sleeping through the night requires only normal players to be in bed
@@ -108,6 +109,8 @@ team join ctrlmobs @e[type=#mctrlmobs:hostileteam]
 team join ctrlpiglins @e[type=#mctrlmobs:piglinteam]
 
 
+
+
 #---------------------------------------------entity specific----------------------------------------
 
 #floating tick
@@ -144,6 +147,9 @@ execute as @a[tag=imaspider] at @s anchored eyes rotated as @s unless block ^ ^0
 
 #projectile tick
 execute as @e[type=snowball] at @s run function mctrlmobs:zzz/projectiles/ptick
+
+scoreboard players remove @a[scores={mctrlmobs.itemcooldown=1..}] mctrlmobs.itemcooldown 1
+
 
 # evoker tick
 execute as @a[tag=imanevoker] at @s unless entity @s[nbt={Inventory:[{id:"minecraft:vex_spawn_egg"}]}] unless entity @e[type=vex,distance=0..30] run give @s vex_spawn_egg{Enchantments:[{id:vanishing_curse,lvl:1}]} 3

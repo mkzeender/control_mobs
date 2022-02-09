@@ -21,6 +21,8 @@ scoreboard objectives add dragonsecond dummy
 scoreboard objectives add dragoncountdown dummy
 scoreboard objectives add dragontick dummy
 
+scoreboard objectives add mctrlmobs.itemcooldown dummy
+
 scoreboard objectives add zpiglinangertmp dummy
 scoreboard objectives add zpiglinanger dummy
 
