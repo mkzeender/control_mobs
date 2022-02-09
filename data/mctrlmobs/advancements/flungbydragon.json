@@ -1,0 +1,26 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "criteria": {
+        "flungbydragon": {
+            "trigger": "minecraft:entity_hurt_player",
+            "conditions": {
+                "damage": {
+                    "blocked": false,
+                    "type": {
+                        "is_magic": false
+                    },
+                    "source_entity": {
+                        "equipment": {
+                            "mainhand": {
+								"nbt": "{CustomTags:[\"mctrlmobs.dragonkb\"]}"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "mctrlmobs:zzz/events/flungbydragon"
+    }
+}
