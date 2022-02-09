@@ -126,12 +126,7 @@ execute if entity @e[tag=iscontrolled,type=minecraft:elder_guardian] run functio
 execute if entity @e[tag=iscontrolled,type=minecraft:elder_guardian] run tag @s add imanelder
 
 
-execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run effect give @s minecraft:slowness 100000 1 true
-execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run give @s iron_sword{display:{Name:'[{"text":"Golem Arm","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1},{id:knockback,lvl:2},{id:sharpness,lvl:3}]} 1
-execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run item replace entity @s armor.head with iron_helmet{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
-execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run item replace entity @s armor.chest with iron_chestplate{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
-execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run item replace entity @s armor.feet with iron_boots{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
-
+execute if entity @e[tag=iscontrolled,type=minecraft:goat] run give @s stick{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"knockback",lvl:4}],display:{Name:'{"text":"Super Goat Knockback Stick"}'},CustomTags:["mctrlmobs.illegal"]}
 
 execute if entity @e[tag=iscontrolled,type=minecraft:hoglin] run give @s iron_sword{display:{Name:'[{"text":"Hoglin Tusk","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1},{id:knockback,lvl:2},{id:sharpness,lvl:1}]} 1
 execute if entity @e[tag=iscontrolled,type=minecraft:hoglin] run item replace entity @s armor.head with leather_helmet{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
@@ -139,6 +134,15 @@ execute if entity @e[tag=iscontrolled,type=minecraft:hoglin] run item replace en
 execute if entity @e[tag=iscontrolled,type=minecraft:hoglin] run item replace entity @s armor.feet with leather_boots{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
 
 
+execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run effect give @s minecraft:slowness 100000 1 true
+execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run give @s iron_sword{display:{Name:'[{"text":"Golem Arm","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1},{id:knockback,lvl:2},{id:sharpness,lvl:3}]} 1
+execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run item replace entity @s armor.head with iron_helmet{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run item replace entity @s armor.chest with iron_chestplate{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run item replace entity @s armor.feet with iron_boots{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+
+
+execute if entity @e[tag=iscontrolled,type=minecraft:llama       ] run tag @s add imallama
+execute if entity @e[tag=iscontrolled,type=minecraft:trader_llama] run tag @s add imallama
 
 
 execute if entity @e[tag=iscontrolled,type=#minecraft:skeletons,type=!wither_skeleton] run give @s bow{Enchantments:[{id:vanishing_curse,lvl:1},{id:infinity,lvl:1}]}

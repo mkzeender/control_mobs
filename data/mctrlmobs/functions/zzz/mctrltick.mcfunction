@@ -14,8 +14,12 @@ execute if entity @e[tag=iscontrolled,type=#mctrlmobs:infinity_arrows] as @e[typ
 execute if entity @e[tag=iscontrolled,type=blaze] if entity @s[scores={mctrlmobs.itemcooldown=0}] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run scoreboard players set @s mctrlmobs.itemcooldown 200
 execute if entity @e[tag=iscontrolled,type=blaze] if entity @s[scores={mctrlmobs.itemcooldown=1}] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run item replace entity @s hotbar.1 with minecraft:snowball{display:{Name:'[{"text":"Blaze Fireball","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}],CustomTags:["mctrlmobs.illegal"]} 3
 
-
+#dolphin
 execute if entity @e[tag=iscontrolled,type=minecraft:dolphin] run effect give @a[distance=0.1..10] minecraft:dolphins_grace 5 0
+
+
+#llama tick
+execute if entity @s[tag=imallama] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run give @s minecraft:snowball{display:{Name:'[{"text":"Llama Spit","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}],CustomTags:["mctrlmobs.illegal"]}
 
 
 # reset wither invulnerability
