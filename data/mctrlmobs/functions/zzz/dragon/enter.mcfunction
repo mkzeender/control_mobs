@@ -37,8 +37,6 @@ tag @s add circling
 
 
 
-item replace entity @s armor.head with minecraft:dragon_head{Enchantments:[{id:unbreaking,lvl:3},{id:"minecraft:vanishing_curse"}]}
-item replace entity @s armor.chest with minecraft:elytra{AttributeModifiers:[{AttributeName:"generic.knockback_resistance",Amount:100000,Slot:chest,Name:"generic.knockback_resistance",UUID:[I;-122023,1841,20647,-3682]}],Enchantments:[{id:unbreaking,lvl:3},{id:vanishing_curse}]}
 
 
 

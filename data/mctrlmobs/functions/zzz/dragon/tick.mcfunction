@@ -2,12 +2,25 @@
 
 execute as @e[tag=dragonhost] at @s run fill ~2 ~-5 ~2 ~-2 ~-5 ~-2 air replace minecraft:end_portal
 
+
+execute unless entity @s[nbt={Inventory:[{Slot:103b, id:"minecraft:dragon_head"}]}] run function mctrlmobs:zzz/inventory/drop/armor.head
+execute unless entity @s[nbt={Inventory:[{Slot:103b, id:"minecraft:dragon_head"}]}] run item replace entity @s armor.head with minecraft:dragon_head{Unbreakable:1b,CustomTags:["mctrlmobs.illegal"]}
+
+execute unless entity @s[nbt={Inventory:[{Slot:102b, id:"minecraft:elytra"}]}     ] run function mctrlmobs:zzz/inventory/drop/armor.chest
+execute unless entity @s[nbt={Inventory:[{Slot:102b, id:"minecraft:elytra"}]}     ] run item replace entity @s armor.chest with minecraft:elytra{AttributeModifiers:[{AttributeName:"generic.knockback_resistance",Amount:100000,Slot:chest,Name:"generic.knockback_resistance",UUID:[I;-122023,1841,20647,-3682]}],Unbreakable:1b,CustomTags:["mctrlmobs.illegal"]}
+
+
+
+
 #get dragon fireball
 execute if entity @s[scores={mctrlmobs.itemcooldown=0}] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run scoreboard players set @s mctrlmobs.itemcooldown 200
-execute if entity @s[scores={mctrlmobs.itemcooldown=1}] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run item replace entity @s hotbar.1 with minecraft:snowball{display:{Name:'[{"text":"Dragon Fireball","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}],CustomTags:["mctrlmobs.illegal"]}
+
+execute if entity @s[scores={mctrlmobs.itemcooldown=1}] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run function mctrlmobs:zzz/inventory/drop/hotbar.1
+execute if entity @s[scores={mctrlmobs.itemcooldown=1}] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run item replace entity @s hotbar.1 with minecraft:snowball{display:{Name:'[{"text":"Dragon Fireball","italic":false}]'},CustomTags:["mctrlmobs.illegal"]}
 
 #get firework rocket
-execute unless entity @s[nbt={Inventory:[{id:"minecraft:firework_rocket"}]}] run item replace entity @s hotbar.2 with minecraft:firework_rocket{Enchantments:[{id:"minecraft:vanishing_curse"}],CustomTags:["mctrlmobs.illegal"]}
+execute unless entity @s[nbt={Inventory:[{id:"minecraft:firework_rocket"}]}] run function mctrlmobs:zzz/inventory/drop/hotbar.2
+execute unless entity @s[nbt={Inventory:[{id:"minecraft:firework_rocket"}]}] run item replace entity @s hotbar.2 with minecraft:firework_rocket{CustomTags:["mctrlmobs.illegal"]}
 
 #get rid of kb stick when not in charge attack
 execute if entity @s[tag=!charging,tag=!perching] run clear @s stick
@@ -59,7 +72,9 @@ execute if entity @s[tag=perching,scores={dragonsecond=0..}] run title @s action
 
 #transition to charging
 execute if entity @s[tag=perching,scores={dragonsecond=..0}] run title @s actionbar "CHARGE!!!"
-execute if entity @s[tag=perching,scores={dragonsecond=..0}] run item replace entity @s hotbar.0 with stick{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"knockback",lvl:4}],display:{Name:'{"text":"Super Dragon Knockback Stick"}'},CustomTags:["mctrlmobs.dragonkb", "mctrlmobs.illegal"]}
+
+execute if entity @s[tag=perching,scores={dragonsecond=..0}] unless entity @s[nbt={Inventory:[{Slot:0b,id:"minecraft:stick"}]}] run function mctrlmobs:zzz/inventory/drop/hotbar.0
+execute if entity @s[tag=perching,scores={dragonsecond=..0}] unless entity @s[nbt={Inventory:[{Slot:0b,id:"minecraft:stick"}]}] run item replace entity @s hotbar.0 with stick{Enchantments:[{id:"knockback",lvl:4}],display:{Name:'{"text":"Super Dragon Knockback Stick"}'},CustomTags:["mctrlmobs.dragonkb", "mctrlmobs.illegal"]}
 
 
 

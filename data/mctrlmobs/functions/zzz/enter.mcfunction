@@ -31,7 +31,7 @@ scoreboard players reset @s mhealed
 
 # set player's max health using a chest!
 setblock 1 0 1 chest
-data merge block 1 0 1 {Items:[{Slot:0b,Count:1b,id:"minecraft:leather_leggings",tag:{display:{Name:'[{"text":"Leggings of Life","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Yes, your life is tied to these","italic":false}]']},Unbreakable:1b,Enchantments:[{id:"binding_curse",lvl:1},{id:"minecraft:vanishing_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.max_health",Amount:1.0,Operation:0,Slot:legs,Name:"generic.max_health",UUID:[I;-122025,16485,20216,-32970]},{AttributeName:"generic.armor",Amount:-5.0,Name:"generic.armor"}]}}]}
+data merge block 1 0 1 {Items:[{Slot:0b,Count:1b,id:"minecraft:leather_leggings",tag:{CustomTags:["mctrlmobs.illegal"],display:{Name:'[{"text":"Leggings of Life","italic":false,"color":"light_purple"}]',Lore:['[{"text":"Yes, your life is tied to these","italic":false}]']},Unbreakable:1b,Enchantments:[{id:"binding_curse",lvl:1},{id:"minecraft:vanishing_curse",lvl:1}],AttributeModifiers:[{AttributeName:"generic.max_health",Amount:1.0,Operation:0,Slot:legs,Name:"generic.max_health",UUID:[I;-122025,16485,20216,-32970]},{AttributeName:"generic.armor",Amount:-5.0,Name:"generic.armor"}]}}]}
 execute store result block 1 0 1 Items[{Slot:0b}].tag.AttributeModifiers[0].Amount double 1 run attribute @e[tag=iscontrolled,limit=1] minecraft:generic.max_health get
 item replace entity @s armor.legs from block 1 0 1 container.0
 data remove block 1 0 1 Items[{Slot:0b}]
@@ -40,14 +40,16 @@ attribute @s minecraft:generic.max_health base set 0
 #effect give @s resistance 1 4 true
 
 
-# Exit Button
-item replace entity @s hotbar.8 with minecraft:warped_fungus_on_a_stick{display:{Name:'[{"text":"Exit Mob","bold":true}]'},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]} 1
 
 
 
-# categories of entities
+#----------------------------------------------- categories of entities----------------------------------------------
+
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:allmonsters] run tag @s add imamonster
-execute if entity @e[tag=iscontrolled,type=#mctrlmobs:inherent_armor] run item replace entity @s armor.feet with iron_boots{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]}
+
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:inherent_armor] run function mctrlmobs:zzz/inventory/drop/armor.feet
+execute if entity @e[tag=iscontrolled,type=#mctrlmobs:inherent_armor] run item replace entity @s armor.feet with iron_boots{CustomTags:["mctrlmobs.illegal"]}
+
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:sunburned] run tag @s add imsunburned
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:floating] run function mctrlmobs:zzz/floating/enter
 execute if entity @e[tag=iscontrolled,type=!#mctrlmobs:melee] run effect give @s weakness 100000 2 true
@@ -83,12 +85,10 @@ execute if entity @e[tag=iscontrolled,type=#mctrlmobs:piglinteam] run team join 
 
 # pillagers
 
-execute if entity @e[tag=iscontrolled,type=minecraft:evoker] run give @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Evoker Fangs"}]'},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]} 1
 execute if entity @e[tag=iscontrolled,type=minecraft:evoker] run gamemode survival
 execute if entity @e[tag=iscontrolled,type=minecraft:evoker] run tag @s add imanevoker
 
-execute if entity @e[tag=iscontrolled,type=minecraft:pillager] run give @s crossbow{Enchantments:[{id:vanishing_curse,lvl:1},{id:infinity,lvl:1}]}
-execute if entity @e[tag=iscontrolled,type=minecraft:pillager] run give @s arrow{Enchantments:[{id:vanishing_curse,lvl:1}]} 256
+
 
 #execute if entity @e[tag=iscontrolled,type=minecraft:ravager] run effect give @s minecraft:health_boost 100000 19 true
 #execute if entity @e[tag=iscontrolled,type=minecraft:ravager] run effect give @s minecraft:instant_health 10 100 true
@@ -103,7 +103,7 @@ execute if entity @e[tag=iscontrolled,type=vindicator] run give @s iron_axe{Ench
 
 
 
-# individual entities
+# ----------------------------------------------individual entities----------------------------------------------------------
 
 execute if entity @e[tag=iscontrolled,type=minecraft:blaze] run scoreboard players set @s mctrlmobs.itemcooldown 75
 execute if entity @e[tag=iscontrolled,type=minecraft:blaze] run tag @s add imablaze

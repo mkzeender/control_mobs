@@ -1,1 +1,1 @@
-give @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Special Ability","bold":true}]'},Enchantments:[{id:"minecraft:vanishing_curse",lvl:1}]} 1
+give @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Special Ability","bold":true}]'},CustomTags:["mctrlmobs.illegal"]} 1
