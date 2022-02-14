@@ -1,0 +1,41 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+	"display": {
+        "title": {
+            "text": "Too Easy!",
+            "color": "light_purple",
+            "italic": true
+        },
+        "description": {
+            "text": "Wither target practice"
+        },
+        "icon": {
+            "item": "minecraft:wither_skeleton_skull"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+    "criteria": {
+        "tooeasy": {
+            "trigger": "minecraft:target_hit",
+			"conditions" :
+			{
+				"projectile": [
+					{
+					"condition": "minecraft:entity_properties",
+					"predicate": {
+						"type": "minecraft:wither_skull"
+						},
+						"entity": "this"
+					}
+				]
+			}
+        }
+    },
+    "rewards": {
+        "experience": 100
+    }
+}
