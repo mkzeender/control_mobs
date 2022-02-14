@@ -1,6 +1,5 @@
 scoreboard players reset @s mctrdeathcount
 
-kill @e[type=item,nbt={Item:{id:"minecraft:player_head"}}]
 
 gamemode spectator @s[tag=ctrlmobs]
 team leave @s
@@ -16,10 +15,8 @@ tp @e[tag=mselected] @s
 execute as @e[tag=mselected] run data merge entity @s {PersistenceRequired:false,NoAI:false,Invulnerable:false}
 kill @e[tag=mselected]
 
-
-
-#if keepinventory is on, ignore it
-execute as @s[tag=imamob] run tag @s add wasamob
+#ignore keepinventory for mob controllers
+execute if entity @s[tag=imamob,tag=ctrlmobs] run function mctrlmobs:zzz/inventory/drop/all
 
 
 #if you entered from survival mode:

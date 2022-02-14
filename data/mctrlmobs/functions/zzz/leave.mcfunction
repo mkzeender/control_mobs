@@ -3,9 +3,8 @@ scoreboard players set @s pressedleave 0
 
 
 #drop inventory onto ground
-clear @s player_head
-execute at @s run function mctrlmobs:zzz/inventory/dropinventory
-clear
+execute at @s[tag=!imahypnotizer] run function mctrlmobs:zzz/inventory/drop/all
+
 
 # go back into spectator
 gamemode spectator
@@ -42,7 +41,8 @@ effect clear @s
 gamemode survival @s[tag=imahypnotizer]
 execute if entity @s[tag=imahypnotizer] run attribute @s minecraft:generic.max_health base set 20
 execute if entity @s[tag=imahypnotizer] run attribute @s minecraft:generic.attack_damage base set 1
-
+execute if entity @s[tag=imahypnotizer] at @s run function mctrlmobs:zzz/inventory/clear_illegal_items
+execute if entity @s[tag=imahypnotizer] run effect give @s resistance 1 4 true
 
 
 #end certain special abilities

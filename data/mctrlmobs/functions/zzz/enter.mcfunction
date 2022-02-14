@@ -15,7 +15,6 @@ tag @s add imamob
 
 
 gamemode adventure
-clear
 
 
 
@@ -26,6 +25,7 @@ tp @e[tag=iscontrolled] 0 500 0
 
 # setting health
 execute store result score @s mmobhealth run data get entity @e[tag=iscontrolled,limit=1] Health
+execute store result score @s mmaxhealth run attribute @e[tag=iscontrolled,limit=1] minecraft:generic.max_health get
 scoreboard players reset @s mhealed
 
 
@@ -46,7 +46,7 @@ data modify block 1 0 1 Items[{Slot:0b}].tag.AttributeModifiers append value {At
 execute store result block 1 0 1 Items[{Slot:0b}].tag.AttributeModifiers[{UUID:[I;-122025,16485,20218,-32970]}].Amount double 0.5 run attribute @e[tag=iscontrolled,limit=1] minecraft:generic.attack_damage base get
 
 
-
+function mctrlmobs:zzz/inventory/drop/armor.head
 item replace entity @s armor.head from block 1 0 1 container.0
 data remove block 1 0 1 Items[{Slot:0b}]
 setblock 1 0 1 bedrock
