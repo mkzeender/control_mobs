@@ -14,7 +14,7 @@ execute if entity @s[tag=!witherstarted,scores={mhealed=1}] run tag @s add withe
 execute unless entity @s[nbt={ActiveEffects:[{Id:10b}]}] run effect give @s regeneration 100000 0 true
 
 #projectiles
-execute if entity @s[scores={mhealed=1},tag=witherstarted] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run give @s snowball{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}
+execute if entity @s[scores={mhealed=1},tag=witherstarted] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run give @s snowball{display:{Name:'[{"text":"Wither Skull","italic":false}]'},CustomTags:["mctrlmobs.illegal"]}
 
 
 # bossbar

@@ -152,7 +152,7 @@ scoreboard players remove @a[scores={mctrlmobs.itemcooldown=1..}] mctrlmobs.item
 
 
 # evoker tick
-execute as @a[tag=imanevoker] at @s unless entity @s[nbt={Inventory:[{id:"minecraft:vex_spawn_egg"}]}] unless entity @e[type=vex,distance=0..30] run give @s vex_spawn_egg{Enchantments:[{id:vanishing_curse,lvl:1}]} 3
+execute as @a[tag=imanevoker] at @s unless entity @s[nbt={Inventory:[{id:"minecraft:vex_spawn_egg"}]}] unless entity @e[type=vex,distance=0..20] run give @s vex_spawn_egg{CustomTags:["mctrlmobs.illegal"]} 3
 
 # wither immune tick
 execute as @a[tag=idontwither] run effect clear @s minecraft:wither
@@ -180,8 +180,7 @@ execute as @a[tag=imhydrophobic] at @s if block ~ ~ ~ water run function mctrlmo
 execute as @e[type=end_crystal] at @s run function mctrlmobs:zzz/dragon/end_crystal_tick
 execute as @a[tag=imadragon] at @s as @e[type=end_crystal,distance=0..32,sort=nearest,limit=1] run function mctrlmobs:zzz/dragon/end_crystal
 
-# evoker tick
-execute as @a[tag=imanevoker] at @s run kill @e[type=evoker_fangs,distance=0..1.3]
+
 
 #zombified_piglin tick
 execute as @a[tag=imazpiglin] at @e[type=minecraft:zombified_piglin,sort=random,limit=1] run function mctrlmobs:zzz/zpiglinanger
