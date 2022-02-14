@@ -20,22 +20,6 @@ execute unless entity @e[type=wither,tag=iscontrolled,nbt={Invul:0}] run effect 
 execute if entity @e[type=wither,    tag=iscontrolled,nbt={Invul:0}] run tag @s add witherstarted
 
 
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-#execute at @s run summon item ~ ~ ~ {Item:{id:snowball,Count:64b,tag:{display:{Name:'[{"text":"Wither Skull","italic":false}]'},Enchantments:[{id:vanishing_curse,lvl:1}]}}}
-
 
 playsound minecraft:entity.wither.ambient hostile @a[distance=0..30] ~ ~ ~ 1 1 1
 
-item replace entity @s armor.chest with leather_chestplate{Enchantments:[{id:"minecraft:vanishing_curse",lvl:1},{id:"blast_protection",lvl:20}],AttributeModifiers:[{AttributeName:"generic.armor",Amount:-20,Name:"generic.armor",UUID:[I;-122022,4608,14262,-9216]}]}
