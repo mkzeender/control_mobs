@@ -1,0 +1,97 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+	"parent": "mctrlmobs:challenges/creeperblowup",
+    "display": {
+        "title": {
+            "text": "Elemental Disaster",
+            "color": "yellow",
+            "italic": true
+        },
+        "description": {
+            "text": "Description"
+        },
+        "icon": {
+            "item": "minecraft:player_head",
+            "nbt": "{SkullOwner:\"MHF_Piglin\"}"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "earthsuffocate": {
+			
+            "trigger": "minecraft:entity_hurt_player",
+            "conditions": {
+				"player": {
+					"nbt":"{Tags:[\"imapiglin\"]}"
+				},
+                "damage": {
+                    "type": {
+                        "bypasses_magic": false,
+                        "bypasses_armor": true,
+						"is_magic": false,
+						"is_fire": false
+                    }
+                }
+            }
+        },
+        "earthfall": {
+            "trigger": "minecraft:tick",
+			"conditions": {
+				"player": {
+					"nbt":"{Tags:[\"imapiglin\"]}"
+				}
+			}
+        },
+        "water": {
+            "trigger": "minecraft:location",
+            "conditions": {
+				"player": {
+					"nbt":"{Tags:[\"imapiglin\"]}"
+				},
+                "fluid": {
+                    "id": "minecraft:water"
+                }
+            }
+        },
+        "fire": {
+            "trigger": "minecraft:entity_hurt_player",
+            "conditions": {
+				"player": {
+					"nbt":"{Tags:[\"imapiglin\"]}"
+				},
+                "damage": {
+                    "type": {
+                        "is_fire": true
+                    }
+                }
+            }
+        },
+        "air": {
+            "trigger": "minecraft:location",
+            "conditions": {
+				"player": {
+					"nbt":"{Tags:[\"imapiglin\"]}"
+				},
+                "dimension": "overworld"
+            }
+        }
+    },
+    "requirements": [
+        [
+            "earthsuffocate",
+            "earthfall"
+        ],
+        [
+            "water"
+        ],
+        [
+            "fire"
+        ],
+        [
+            "air"
+        ]
+    ]
+}

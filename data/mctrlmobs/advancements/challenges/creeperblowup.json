@@ -1,0 +1,27 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+	"parent": "mctrlmobs:challenges/root",
+    "display": {
+        "title": {
+            "text": "What does this button do?",
+            "color": "green",
+            "italic": true
+        },
+        "description": {
+            "text": "Blow up a creeper"
+        },
+        "icon": {
+            "item": "minecraft:tnt"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+    "criteria": {
+        "blowup": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}

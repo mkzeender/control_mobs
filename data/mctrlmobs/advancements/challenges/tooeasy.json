@@ -1,5 +1,6 @@
 {
     "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+	"parent": "mctrlmobs:challenges/shootprojectile",
 	"display": {
         "title": {
             "text": "Too Easy!",
@@ -7,7 +8,7 @@
             "italic": true
         },
         "description": {
-            "text": "Wither target practice"
+            "text": "Hit a bullseye with a wither skull"
         },
         "icon": {
             "item": "minecraft:wither_skeleton_skull"

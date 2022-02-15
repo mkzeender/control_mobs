@@ -1,0 +1,34 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+	"parent": "mctrlmobs:challenges/root",
+    "display": {
+        "title": {
+            "text": "Fire in the hole",
+            "italic": true
+        },
+        "description": [
+			{
+				"text": "Tell 'er baby baby baby baby baby baby baby baby baby, I'm a ",
+				"bold": false,
+				"italic": false
+			},
+			{
+				"text": "Fireball",
+				"italic": true,
+				"color": "orange"
+			}
+        ],
+        "icon": {
+            "item": "minecraft:fire_charge"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "shootfireball": {
+            "trigger": "minecraft:impossible"
+        }
+    }
+}
