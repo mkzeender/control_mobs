@@ -1,7 +1,7 @@
 tag @e[tag=mselected] remove mselected
 tag @e[tag=zselected] remove zselected
 
-
+advancement grant @s only mctrlmobs:challenges/creeperblowup
 
 tag @s add zselected
 

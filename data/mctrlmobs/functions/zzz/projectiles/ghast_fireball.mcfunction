@@ -1,5 +1,6 @@
 # as snowball at self
 
+advancement grant @p[tag=imaghast] only mctrlmobs:challenges/shootprojectile
 
 summon fireball ~ ~ ~
 

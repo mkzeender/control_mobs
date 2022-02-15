@@ -1,5 +1,6 @@
 # as snowball at self
 
+advancement grant @p[tag=imablaze] only mctrlmobs:challenges/shootprojectile
 
 summon small_fireball ~ ~ ~
 

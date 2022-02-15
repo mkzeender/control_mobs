@@ -9,6 +9,7 @@ tag @s remove imhydrophobic
 
 tag @s remove imaghast
 tag @s remove imablaze
+tag @s remove imapiglin
 tag @s remove imazpiglin
 tag @s remove imaspider
 tag @s remove imanenderman

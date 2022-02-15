@@ -1,4 +1,9 @@
 
+#advancements
+advancement grant @s only mctrlmobs:challenges/root
+
+
+
 tag @e[tag=iscontrolled] remove iscontrolled
 
 tag @e[distance=0,limit=1,type=#mctrlmobs:allmobs,type=!ender_dragon] add iscontrolled
@@ -150,6 +155,9 @@ execute if entity @e[tag=iscontrolled,type=minecraft:iron_golem] run give @s sti
 execute if entity @e[tag=iscontrolled,type=minecraft:llama       ] run tag @s add imallama
 execute if entity @e[tag=iscontrolled,type=minecraft:trader_llama] run tag @s add imallama
 
+
+execute if entity @e[tag=iscontrolled,type=minecraft:piglin      ] run tag @s add imapiglin
+execute if entity @e[tag=iscontrolled,type=minecraft:piglin_brute] run tag @s add imapiglin
 
 
 execute if entity @e[tag=iscontrolled,type=minecraft:spider     ] run tag @s add imaspider

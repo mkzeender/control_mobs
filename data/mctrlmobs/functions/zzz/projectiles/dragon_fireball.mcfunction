@@ -1,5 +1,6 @@
 # as snowball at self
 
+advancement grant @p[tag=imadragon] only mctrlmobs:challenges/shootprojectile
 
 summon dragon_fireball ~ ~ ~
 
