@@ -21,8 +21,7 @@ execute if entity @s[tag=imamob,tag=ctrlmobs] run function mctrlmobs:zzz/invento
 
 #if you entered from survival mode:
 gamemode survival @s[tag=imahypnotizer]
-execute if entity @s[tag=imahypnotizer] run attribute @s minecraft:generic.max_health base set 20
-execute if entity @s[tag=imahypnotizer] run attribute @s minecraft:generic.attack_damage base set 1
+execute if entity @s[tag=imahypnotizer] run function mctrlmobs:zzz/reset_attributes
 
 
 

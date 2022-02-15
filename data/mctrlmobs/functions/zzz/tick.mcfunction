@@ -17,8 +17,7 @@ scoreboard players set @a mctrlmobs.isloggedin 1
 execute as @a unless score @s muserid = @s muserid run function mctrlmobs:zzz/firstjoin
 
 
-#clear illegal items
-kill @e[type=item,nbt={Item:{tag:{CustomTags:["mctrlmobs.illegal"]}}}]
+
 
 
 #sleeping through the night requires only normal players to be in bed
@@ -158,6 +157,7 @@ execute as @a[tag=imanevoker] at @s unless entity @s[nbt={Inventory:[{id:"minecr
 execute as @a[tag=idontwither] run effect clear @s minecraft:wither
 
 # burn in sunlight tick
+execute as @a[tag=imsunburned,scores={daytime=0..12000},nbt={Dimension:"minecraft:overworld"}] at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 air replace fire
 execute as @a[tag=imsunburned,scores={daytime=0..12000},nbt={Dimension:"minecraft:overworld"}] at @s if blocks ~ ~ ~ ~ ~200 ~ 0 200 0 masked run setblock ~ ~ ~ fire
 execute store result score @a daytime run time query daytime
 
@@ -214,3 +214,12 @@ execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^3.2 run function
 execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^3.4 run function mctrlmobs:zzz/inventory/chesttick
 execute as @a at @s anchored eyes rotated as @s positioned ^ ^ ^3.6 run function mctrlmobs:zzz/inventory/chesttick
 
+
+
+
+
+#------------------------------------------- ILLEGAL ITEMS-----------------------------------------------------------
+
+kill @e[type=item,nbt={Item:{tag:{CustomTags:["mctrlmobs.illegal"]}}}]
+
+execute as @a[tag=!imamob,nbt={Inventory:[{tag:{CustomTags:["mctrlmobs.illegal"]}}]}] run function mctrlmobs:zzz/inventory/clear_illegal_items

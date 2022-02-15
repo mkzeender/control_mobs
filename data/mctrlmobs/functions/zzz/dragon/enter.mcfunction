@@ -21,7 +21,7 @@ effect give @s minecraft:slow_falling 100000 0 true
 effect give @s minecraft:instant_health 100 100 true
 effect give @s minecraft:fire_resistance 100000 0 true
 
-
+function mctrlmobs:zzz/reset_attributes
 attribute @s minecraft:generic.max_health base set 200
 scoreboard players set @s mmaxhealth 200
 

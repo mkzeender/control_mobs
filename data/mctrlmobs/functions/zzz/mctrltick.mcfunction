@@ -10,6 +10,12 @@ execute unless entity @s[nbt={Inventory:[{Slot:0b,tag:{CustomTags:["mctrlmobs.we
 execute unless entity @s[nbt={Inventory:[{Slot:0b,tag:{CustomTags:["mctrlmobs.weapon.mainhand"]}}]}] if entity @e[tag=iscontrolled,nbt={HandItems:[{Count:1b},{}]}] run item replace entity @s hotbar.0 from entity @e[tag=iscontrolled,limit=1] weapon.mainhand mctrlmobs:set_weapon_data
 
 
+#Armor (except for helmet unfortunately)
+execute unless entity @s[nbt={Inventory:[{Slot:100b}]}] run item replace entity @s armor.feet from entity @e[tag=iscontrolled,limit=1] armor.feet mctrlmobs:set_armor_data
+execute unless entity @s[nbt={Inventory:[{Slot:101b}]}] run item replace entity @s armor.legs from entity @e[tag=iscontrolled,limit=1] armor.legs mctrlmobs:set_armor_data
+execute unless entity @s[nbt={Inventory:[{Slot:102b}]}] run item replace entity @s armor.chest from entity @e[tag=iscontrolled,limit=1] armor.chest mctrlmobs:set_armor_data
+
+
 # Arrows
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:bow"}}     ] unless entity @s[nbt={Inventory:[{Slot:17b,id:"minecraft:arrow"}]}] run function mctrlmobs:zzz/inventory/drop/inventory.8
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:crossbow"}}] unless entity @s[nbt={Inventory:[{Slot:17b,id:"minecraft:arrow"}]}] run function mctrlmobs:zzz/inventory/drop/inventory.8
@@ -43,6 +49,9 @@ execute unless entity @s[nbt={Inventory:[{Slot:1b,id:"minecraft:carrot_on_a_stic
 #llama tick
 execute if entity @s[tag=imallama] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run give @s minecraft:snowball{display:{Name:'[{"text":"Llama Spit","italic":false}]'},CustomTags:["mctrlmobs.illegal"]}
 
+
+#piglin
+execute if entity @e[tag=iscontrolled,type=piglin] run function mctrlmobs:zzz/piglin/tick
 
 #pillager
 

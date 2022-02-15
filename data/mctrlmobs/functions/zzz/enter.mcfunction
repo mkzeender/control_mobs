@@ -45,6 +45,10 @@ execute store result block 1 0 1 Items[{Slot:0b}].tag.AttributeModifiers[{UUID:[
 data modify block 1 0 1 Items[{Slot:0b}].tag.AttributeModifiers append value {AttributeName:"generic.attack_damage",Amount:1.0,Operation:0,Slot:head,Name:"generic.attack_damage",UUID:[I;-122025,16485,20218,-32970]}
 execute store result block 1 0 1 Items[{Slot:0b}].tag.AttributeModifiers[{UUID:[I;-122025,16485,20218,-32970]}].Amount double 0.5 run attribute @e[tag=iscontrolled,limit=1] minecraft:generic.attack_damage base get
 
+# copy inherent_armor
+data modify block 1 0 1 Items[{Slot:0b}].tag.AttributeModifiers append value {AttributeName:"generic.armor",Amount:1.0,Operation:0,Slot:head,Name:"generic.attack_damage",UUID:[I;-122025,16485,20219,-32970]}
+execute store result block 1 0 1 Items[{Slot:0b}].tag.AttributeModifiers[{UUID:[I;-122025,16485,20219,-32970]}].Amount double 1.0 run attribute @e[tag=iscontrolled,limit=1] minecraft:generic.armor base get
+
 
 function mctrlmobs:zzz/inventory/drop/armor.head
 item replace entity @s armor.head from block 1 0 1 container.0
@@ -59,9 +63,6 @@ attribute @s minecraft:generic.max_health base set 0
 #----------------------------------------------- categories of entities----------------------------------------------
 
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:allmonsters] run tag @s add imamonster
-
-execute if entity @e[tag=iscontrolled,type=#mctrlmobs:inherent_armor] run function mctrlmobs:zzz/inventory/drop/armor.feet
-execute if entity @e[tag=iscontrolled,type=#mctrlmobs:inherent_armor] run item replace entity @s armor.feet with iron_boots{CustomTags:["mctrlmobs.illegal"]}
 
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:sunburned] run tag @s add imsunburned
 execute if entity @e[tag=iscontrolled,type=#mctrlmobs:floating] run function mctrlmobs:zzz/floating/enter
