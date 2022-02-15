@@ -23,13 +23,18 @@ execute if entity @s[nbt={SelectedItem:{id:"minecraft:crossbow"}}] unless entity
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:bow"}}     ] unless entity @s[nbt={Inventory:[{Slot:17b,id:"minecraft:arrow"}]}] run item replace entity @s inventory.8 with arrow{Unbreakable:1b,CustomTags:["mctrlmobs.illegal"]}
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:crossbow"}}] unless entity @s[nbt={Inventory:[{Slot:17b,id:"minecraft:arrow"}]}] run item replace entity @s inventory.8 with arrow{Unbreakable:1b,CustomTags:["mctrlmobs.illegal"]}
 
+
+# Burning (for fire-aspect looting)
+#set certain mob properties
+data modify entity @e[tag=iscontrolled,limit=1] Fire set from entity @s Fire
+
+
 #--------------------------depending on what entity the player is controlling, do these things each tick----------------------
 
 #convert arrows to infinity arrows
 execute as @e[type=#minecraft:arrows,distance=0..2] run data merge entity @s {pickup:0b}
 #convert tridents to infinity tridents
 execute as @e[type=minecraft:trident,nbt={Trident:{tag:{CustomTags:["mctrlmobs.illegal"]}}}] run data merge entity @s {pickup:0b}
-
 
 
 

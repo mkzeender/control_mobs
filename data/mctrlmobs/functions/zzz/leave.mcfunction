@@ -22,9 +22,6 @@ execute as @e[tag=iscontrolled] run data merge entity @s {PersistenceRequired:fa
 data modify entity @e[tag=iscontrolled,limit=1] Health set from entity @s[scores={mhealed=1}] Health
 
 
-#set certain mob properties
-data modify entity @e[tag=iscontrolled,limit=1] Fire set from entity @s Fire
-
 
 
 tag @e[tag=iscontrolled] remove savedforlater

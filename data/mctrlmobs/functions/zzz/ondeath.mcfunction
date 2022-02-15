@@ -13,7 +13,15 @@ tag @s add zselected
 execute as @e[tag=savedforlater] if score @p[tag=zselected] muserid = @s muserid run tag @s add mselected
 tp @e[tag=mselected] @s
 execute as @e[tag=mselected] run data merge entity @s {PersistenceRequired:false,NoAI:false,Invulnerable:false}
+
+
+# kill the mob
 kill @e[tag=mselected]
+
+
+
+
+
 
 #ignore keepinventory for mob controllers
 execute if entity @s[tag=imamob,tag=ctrlmobs] run function mctrlmobs:zzz/inventory/drop/all
