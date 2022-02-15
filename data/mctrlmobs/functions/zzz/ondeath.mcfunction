@@ -21,8 +21,6 @@ kill @e[tag=mselected]
 
 
 
-
-
 #ignore keepinventory for mob controllers
 execute if entity @s[tag=imamob,tag=ctrlmobs] run function mctrlmobs:zzz/inventory/drop/all
 

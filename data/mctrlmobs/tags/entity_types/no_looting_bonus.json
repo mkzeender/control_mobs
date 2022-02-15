@@ -1,0 +1,15 @@
+{
+	"__comment": "These mobs won't drop extra items from the looting enchantment",
+	"values": [
+		"cod",
+		"elder_guardian",
+		"ender_dragon",
+		"evoker",
+		"fox",
+		"snow_golem",
+		"iron_golem",
+		"pufferfish",
+		"salmon",
+		"wither"
+	]
+}

@@ -1,0 +1,30 @@
+{
+    "__comment": "Made with TheDestruc7i0n's advancements generator: https://advancements.thedestruc7i0n.ca",
+    "criteria": {
+        "killbylooting": {
+            "trigger": "minecraft:entity_killed_player",
+            "conditions": {
+                "killing_blow": {
+                    "source_entity": {
+                        "equipment": {
+                            "mainhand": {
+                                "enchantments": [
+                                    {
+                                        "enchantment": "minecraft:looting",
+                                        "levels": {
+                                            "min": 2,
+                                            "max": 2
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "mctrlmobs:zzz/events/killedbylooting/2"
+    }
+}
