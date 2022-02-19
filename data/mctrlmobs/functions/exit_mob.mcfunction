@@ -1,0 +1,1 @@
+execute at @s[tag=imamob] run function mctrlmobs:zzz/leave
