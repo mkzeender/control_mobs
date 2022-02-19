@@ -25,7 +25,6 @@ tag @s remove imacreeper
 tag @s remove imablow
 
 tag @s remove imadragon
-tag @s remove dragontick
 
 tag @s remove witherstarted
 tag @s remove imawither

@@ -5,9 +5,10 @@ execute unless entity @e[tag=dragonhost] run function mctrlmobs:zzz/dragon/creat
 spectate
 gamemode survival
 
-tp @e[type=ender_dragon] 0 -64 0
-kill @e[type=ender_dragon]
-
+data merge entity @e[tag=iscontrolled,limit=1] {NoAI:false}
+tag @e[tag=iscontrolled] remove mctrlmobs.firsttick
+tag @e[tag=iscontrolled] remove mctrlmobs.secondtick
+tp @e[tag=iscontrolled] 0 -64 0
 
 
 bossbar set mctrlmobs:ender_dragon name {"selector":"@s"}
@@ -39,6 +40,5 @@ tag @s add circling
 
 
 
-
-tag @s add dragontick
+tag @s add imamob
 tag @s add imadragon

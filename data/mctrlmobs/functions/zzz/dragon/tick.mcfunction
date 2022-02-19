@@ -3,9 +3,21 @@
 execute as @e[tag=dragonhost] at @s run fill ~2 ~-5 ~2 ~-2 ~-5 ~-2 air replace minecraft:end_portal
 
 
+
+
+
+#tick the ender_dragon entity one time or else it won't visually disappear
+data merge entity @e[tag=iscontrolled,limit=1,tag=mctrlmobs.secondtick] {NoAI:true}
+tag @e[tag=iscontrolled,tag=mctrlmobs.firsttick] add mctrlmobs.secondtick
+tag @e[tag=iscontrolled,limit=1] add mctrlmobs.firsttick
+
+
+
+
+# get dragon head item
 execute unless entity @s[nbt={Inventory:[{Slot:103b, id:"minecraft:dragon_head"}]}] run function mctrlmobs:zzz/inventory/drop/armor.head
 execute unless entity @s[nbt={Inventory:[{Slot:103b, id:"minecraft:dragon_head"}]}] run item replace entity @s armor.head with minecraft:dragon_head{Unbreakable:1b,CustomTags:["mctrlmobs.illegal"]}
-
+# get elytra
 execute unless entity @s[nbt={Inventory:[{Slot:102b, id:"minecraft:elytra"}]}     ] run function mctrlmobs:zzz/inventory/drop/armor.chest
 execute unless entity @s[nbt={Inventory:[{Slot:102b, id:"minecraft:elytra"}]}     ] run item replace entity @s armor.chest with minecraft:elytra{AttributeModifiers:[{AttributeName:"generic.knockback_resistance",Amount:100000,Slot:chest,Name:"generic.knockback_resistance",UUID:[I;-122023,1841,20647,-3682]}],Unbreakable:1b,CustomTags:["mctrlmobs.illegal"]}
 
@@ -112,30 +124,30 @@ tag @s remove transitioning
 
 # BLOCK BREAKING
 
-execute positioned ~-1 ~-1 ~-1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air
-execute positioned ~-1 ~-1 ~0 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air
-execute positioned ~-1 ~-1 ~1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air
-execute positioned ~-1 ~0 ~-1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air
-execute positioned ~-1 ~0 ~0 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air
-execute positioned ~-1 ~0 ~1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air
-execute positioned ~-1 ~1 ~-1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air
-execute positioned ~-1 ~1 ~0 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air
-execute positioned ~-1 ~1 ~1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air
-execute positioned ~0 ~-1 ~-1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~0 ~-1 ~0 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~0 ~-1 ~1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~0 ~0 ~-1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~0 ~0 ~0 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~0 ~0 ~1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~0 ~1 ~-1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~0 ~1 ~0 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~0 ~1 ~1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~1 ~-1 ~-1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~1 ~-1 ~0 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~1 ~-1 ~1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~1 ~0 ~-1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~1 ~0 ~0 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~1 ~0 ~1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~1 ~1 ~-1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~1 ~1 ~0 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
-execute positioned ~1 ~1 ~1 unless block ~ ~ ~ #minecraft:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~-1 ~-1 ~-1 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air
+execute positioned ~-1 ~-1 ~00 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air
+execute positioned ~-1 ~-1 ~01 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air
+execute positioned ~-1 ~00 ~-1 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air
+execute positioned ~-1 ~00 ~00 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air
+execute positioned ~-1 ~00 ~01 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air
+execute positioned ~-1 ~01 ~-1 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air
+execute positioned ~-1 ~01 ~00 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air
+execute positioned ~-1 ~01 ~01 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air
+execute positioned ~00 ~-1 ~-1 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~00 ~-1 ~00 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~00 ~-1 ~01 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~00 ~00 ~-1 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~00 ~00 ~00 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~00 ~00 ~01 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~00 ~01 ~-1 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~00 ~01 ~00 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~00 ~01 ~01 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~01 ~-1 ~-1 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~01 ~-1 ~00 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~01 ~-1 ~01 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~01 ~00 ~-1 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~01 ~00 ~00 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~01 ~00 ~01 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~01 ~01 ~-1 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~01 ~01 ~00 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 
+execute positioned ~01 ~01 ~01 unless block ~ ~ ~ #mctrlmobs:dragon_immune run setblock ~ ~ ~ air 

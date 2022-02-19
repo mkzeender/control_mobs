@@ -55,11 +55,12 @@ execute as @p[scores={mctrlmobs.options.craft=0..}] run scoreboard players reset
 
 #-----------------------------------------------EVENTS----------------------------------------------------------------
 # entering an entity
-execute as @a[tag=ctrlmobs,gamemode=spectator] at @s if entity @e[distance=0,limit=1,type=#mctrlmobs:allmobs,type=!minecraft:ender_dragon] run function mctrlmobs:zzz/enter
-execute as @a[tag=ctrlmobs,gamemode=spectator] at @s if entity @e[distance=0..10,limit=1,type=ender_dragon] run function mctrlmobs:zzz/dragon/enter
+execute as @a[tag=ctrlmobs,tag=!imamob] at @s run tp @s @e[distance=0..10,limit=1,type=ender_dragon]
+execute as @a[tag=ctrlmobs,tag=!imamob] at @s if entity @e[distance=0,limit=1,type=#mctrlmobs:allmobs] run function mctrlmobs:zzz/enter
 
 
-execute as @a[tag=dragontick] at @s run function mctrlmobs:zzz/dragon/tick
+
+execute as @a[tag=imadragon] at @s run function mctrlmobs:zzz/dragon/tick
 
 # on button press
 execute as @a[scores={pressedbutton=1..}, tag=imamob] at @s run function mctrlmobs:zzz/pressedbutton

@@ -30,6 +30,7 @@ tag @e[tag=iscontrolled] remove savedforlater
 
 # move so as to not accidentally enter the entity again
 tp ~ ~0.5 ~
+tp @e[tag=iscontrolled,type=ender_dragon] ~ ~20 ~
 
 effect clear @s
 

@@ -6,7 +6,8 @@ advancement grant @s only mctrlmobs:challenges/root
 
 tag @e[tag=iscontrolled] remove iscontrolled
 
-tag @e[distance=0,limit=1,type=#mctrlmobs:allmobs,type=!ender_dragon] add iscontrolled
+tag @e[distance=0,limit=1,type=#mctrlmobs:allmobs] add iscontrolled
+execute unless entity @e[tag=iscontrolled] if entity @e[type=ender_dragon,distance=0..10] run tag @e[type=ender_dragon,sort=nearest,limit=1] add iscontrolled
 tag @e[tag=iscontrolled] add savedforlater
 
 scoreboard players operation @e[tag=iscontrolled] muserid = @s muserid
@@ -140,6 +141,7 @@ execute if entity @e[tag=iscontrolled,type=minecraft:guardian      ] run functio
 execute if entity @e[tag=iscontrolled,type=minecraft:elder_guardian] run function mctrlmobs:zzz/guardian/enter
 execute if entity @e[tag=iscontrolled,type=minecraft:elder_guardian] run tag @s add imanelder
 
+execute if entity @e[tag=iscontrolled,type=minecraft:ender_dragon] run function mctrlmobs:zzz/dragon/enter
 
 execute if entity @e[tag=iscontrolled,type=minecraft:goat] run give @s stick{Enchantments:[{id:"knockback",lvl:4}],display:{Name:'{"text":"Super Goat Knockback Stick"}'},CustomTags:["mctrlmobs.illegal"]}
 
@@ -177,7 +179,6 @@ execute if entity @e[tag=iscontrolled,type=minecraft:ghast] run tag @s add imagh
 
 
 
-execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run give @s minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Teleport"}]'},CustomTags:["mctrlmobs.illegal"]} 1
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run gamemode survival
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run tag @s add imanenderman
 

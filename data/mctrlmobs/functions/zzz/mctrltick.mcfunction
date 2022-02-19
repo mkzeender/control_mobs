@@ -1,8 +1,8 @@
 function mctrlmobs:zzz/select_controlled_mob
 
 # Exit Button
-execute unless entity @s[nbt={Inventory:[{Slot:8b,id:"minecraft:warped_fungus_on_a_stick"}]}] unless entity @s[tag=imadragon] run function mctrlmobs:zzz/inventory/drop/hotbar.8
-execute unless entity @s[nbt={Inventory:[{Slot:8b,id:"minecraft:warped_fungus_on_a_stick"}]}] unless entity @s[tag=imadragon] run item replace entity @s hotbar.8 with minecraft:warped_fungus_on_a_stick{display:{Name:'[{"text":"Exit Mob","bold":true}]'},CustomTags:["mctrlmobs.illegal"]} 1
+execute unless entity @s[nbt={Inventory:[{Slot:8b,id:"minecraft:warped_fungus_on_a_stick"}]}] run function mctrlmobs:zzz/inventory/drop/hotbar.8
+execute unless entity @s[nbt={Inventory:[{Slot:8b,id:"minecraft:warped_fungus_on_a_stick"}]}] run item replace entity @s hotbar.8 with minecraft:warped_fungus_on_a_stick{display:{Name:'[{"text":"Exit Mob","bold":true}]'},CustomTags:["mctrlmobs.illegal"]} 1
 
 
 # Mainhand weapon
@@ -45,6 +45,11 @@ execute if entity @e[tag=iscontrolled,type=blaze] if entity @s[scores={mctrlmobs
 
 #dolphin
 execute if entity @e[tag=iscontrolled,type=minecraft:dolphin] run effect give @a[distance=0.1..10] minecraft:dolphins_grace 5 0
+
+#enderman
+execute if entity @e[tag=iscontrolled,type=minecraft:enderman] unless entity @s[nbt={Inventory:[{id:"minecraft:carrot_on_a_stick"}]}] run function mctrlmobs:zzz/inventory/drop/hotbar.1
+execute if entity @e[tag=iscontrolled,type=minecraft:enderman] unless entity @s[nbt={Inventory:[{id:"minecraft:carrot_on_a_stick"}]}] run item replace entity @s hotbar.1 with minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Teleport"}]'},CustomTags:["mctrlmobs.illegal"]} 1
+
 
 #evoker tick
 execute unless entity @s[nbt={Inventory:[{Slot:1b,id:"minecraft:carrot_on_a_stick"}]}] if entity @e[tag=iscontrolled,type=minecraft:evoker] run function mctrlmobs:zzz/inventory/drop/hotbar.1
