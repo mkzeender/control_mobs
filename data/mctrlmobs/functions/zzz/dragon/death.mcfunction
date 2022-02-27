@@ -8,3 +8,7 @@ execute as @e[tag=dragonhost] at @s run setblock ~02 ~-5 ~02 bedrock
 execute as @e[tag=dragonhost] at @s run setblock ~00 ~-5 ~00 bedrock
 
 playsound minecraft:entity.ender_dragon.death hostile @a[distance=0..200] ~ ~ ~ 1 1 1
+
+
+#speedrunner_vs_hunter datapack compatibility
+function srvh:zlib/ondragonkill
