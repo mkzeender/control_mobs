@@ -142,6 +142,9 @@ execute if entity @e[tag=iscontrolled,type=minecraft:elder_guardian] run tag @s 
 
 execute if entity @e[tag=iscontrolled,type=minecraft:ender_dragon] run function mctrlmobs:zzz/dragon/enter
 
+execute if entity @e[tag=iscontrolled,type=minecraft:frog] run effect give @s minecraft:slowness 1000000 2 true
+execute if entity @e[tag=iscontrolled,type=minecraft:frog] run effect give @s minecraft:jump_boost 1000000 3 true
+
 execute if entity @e[tag=iscontrolled,type=minecraft:goat] run give @s stick{Enchantments:[{id:"knockback",lvl:4}],display:{Name:'{"text":"Super Goat Knockback Stick"}'},CustomTags:["mctrlmobs.illegal"]}
 
 execute if entity @e[tag=iscontrolled,type=minecraft:hoglin] run give @s stick{display:{Name:'[{"text":"Hoglin Tusk","italic":false}]'},CustomTags:["mctrlmobs.illegal"],Enchantments:[{id:knockback,lvl:2}]} 1
@@ -182,6 +185,7 @@ execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run gamemode surv
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run tag @s add imanenderman
 
 
+execute if entity @e[tag=iscontrolled,type=minecraft:warden] run effect give @s minecraft:slowness 1000000 2 true
 execute if entity @e[tag=iscontrolled,type=minecraft:warden] run effect give @s minecraft:blindness 1000000 0 true
 execute if entity @e[tag=iscontrolled,type=minecraft:warden] run effect give @s minecraft:darkness 1000000 0 true
 execute if entity @e[tag=iscontrolled,type=minecraft:warden] run tag @s add imawarden
