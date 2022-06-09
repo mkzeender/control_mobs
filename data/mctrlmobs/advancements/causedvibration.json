@@ -13,7 +13,14 @@
       "trigger": "minecraft:placed_block"
     },
     "fall": {
-      "trigger": "minecraft:fall_from_height"
+      "trigger": "minecraft:fall_from_height",
+	  "conditions": {
+		  "distance": {
+			  "y": {
+				  "min": 0
+			  }
+		  }
+	  }
     }
   },
   "requirements": [
