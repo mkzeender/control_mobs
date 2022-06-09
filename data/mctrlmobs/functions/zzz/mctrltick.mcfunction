@@ -82,3 +82,8 @@ execute if entity @e[tag=iscontrolled,type=ghast] if entity @s[scores={mctrlmobs
 #strays
 execute if entity @e[tag=iscontrolled,type=stray] unless entity @s[nbt={Inventory:[{id:"minecraft:tipped_arrow"}]}] run function mctrlmobs:zzz/inventory/drop/inventory.7
 execute if entity @e[tag=iscontrolled,type=stray] unless entity @s[nbt={Inventory:[{id:"minecraft:tipped_arrow"}]}] run item replace entity @s inventory.7 with tipped_arrow{CustomTags:["mctrlmobs.illegal"],CustomPotionColor:11594239,display:{Name:'[{"text":"Arrow of Slowness","italic":false}]'},CustomPotionEffects:[{Id:2,Duration:140,Amplifier:0}]}
+
+
+
+#warden
+execute if entity @e[tag=iscontrolled,type=warden] unless entity @s[nbt={Inventory:[{Slot:1b,id:"minecraft:carrot_on_a_stick"}]}] unless entity @s[scores={mctrlmobs.itemcooldown=1..}] run item replace entity @s hotbar.1 with minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Sonic Boom","bold":true}]'},CustomTags:["mctrlmobs.illegal"]} 1

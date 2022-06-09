@@ -26,3 +26,6 @@ effect give @s[tag=imablow] minecraft:slowness 2 3 true
 
 # evoker_fangs
 execute if entity @s[tag=imanevoker] unless entity @e[type=evoker_fangs,distance=0..6] rotated as @s rotated ~ 0 run function mctrlmobs:zzz/projectiles/evoker_fangs
+
+# warden sonic boom
+execute if entity @s[tag=imawarden,scores={mctrlmobs.itemcooldown=..0}] run function mctrlmobs:zzz/warden/sonic_boom

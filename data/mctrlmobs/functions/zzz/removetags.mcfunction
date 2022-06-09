@@ -34,6 +34,8 @@ tag @s remove imoverworldophobic
 tag @s remove impoisonous
 tag @s remove imawitherer
 
+tag @s remove imawarden
+
 tag @s remove perching
 tag @s remove circling
 tag @s remove charging

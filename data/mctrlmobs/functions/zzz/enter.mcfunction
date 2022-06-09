@@ -3,7 +3,6 @@
 advancement grant @s only mctrlmobs:challenges/root
 
 
-
 tag @e[tag=iscontrolled] remove iscontrolled
 
 tag @e[distance=0,limit=1,type=#mctrlmobs:allmobs] add iscontrolled
@@ -181,6 +180,11 @@ execute if entity @e[tag=iscontrolled,type=minecraft:ghast] run tag @s add imagh
 
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run gamemode survival
 execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run tag @s add imanenderman
+
+
+execute if entity @e[tag=iscontrolled,type=minecraft:warden] run effect give @s minecraft:blindness 1000000 0 true
+execute if entity @e[tag=iscontrolled,type=minecraft:warden] run effect give @s minecraft:darkness 1000000 0 true
+execute if entity @e[tag=iscontrolled,type=minecraft:warden] run tag @s add imawarden
 
 
 execute if entity @e[tag=iscontrolled,type=minecraft:witch       ] run give @s minecraft:potion{CustomTags:["mctrlmobs.illegal"],Potion:"minecraft:water",CustomPotionEffects:[{Id:10,Amplifier:1,Duration:1200}],display:{Name:"\"Regeneration\""}} 1
