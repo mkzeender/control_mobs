@@ -1,0 +1,31 @@
+{
+  "criteria": {
+    "consume": {
+      "trigger": "minecraft:consume_item"
+    },
+    "use": {
+      "trigger": "minecraft:using_item"
+    },
+    "attack": {
+      "trigger": "minecraft:player_hurt_entity"
+    },
+    "place_block": {
+      "trigger": "minecraft:placed_block"
+    },
+    "fall": {
+      "trigger": "minecraft:fall_from_height"
+    }
+  },
+  "requirements": [
+    [
+      "consume",
+      "use",
+      "attack",
+      "place_block",
+	  "fall"
+    ]
+  ],
+  "rewards": {
+    "function": "mctrlmobs:zzz/events/causedvibration"
+  }
+}
