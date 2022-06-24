@@ -89,6 +89,11 @@ execute if entity @e[tag=iscontrolled,type=ghast] if entity @s[scores={mctrlmobs
 execute if entity @e[tag=iscontrolled,type=ghast] if entity @s[scores={mctrlmobs.itemcooldown=1}] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run function mctrlmobs:zzz/inventory/drop/hotbar.0
 execute if entity @e[tag=iscontrolled,type=ghast] if entity @s[scores={mctrlmobs.itemcooldown=1}] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run item replace entity @s hotbar.0 with minecraft:snowball{display:{Name:'[{"text":"Ghast Fireball","italic":false}]'},CustomTags:["mctrlmobs.illegal"]}
 
+#guardians
+execute if entity @e[tag=iscontrolled,type=elder_guardian] run function mctrlmobs:zzz/guardian/tick
+execute if entity @e[tag=iscontrolled,type=guardian      ] run function mctrlmobs:zzz/guardian/tick
+
+
 #strays
 execute if entity @e[tag=iscontrolled,type=stray] unless entity @s[nbt={Inventory:[{id:"minecraft:tipped_arrow"}]}] run function mctrlmobs:zzz/inventory/drop/inventory.7
 execute if entity @e[tag=iscontrolled,type=stray] unless entity @s[nbt={Inventory:[{id:"minecraft:tipped_arrow"}]}] run item replace entity @s inventory.7 with tipped_arrow{CustomTags:["mctrlmobs.illegal"],CustomPotionColor:11594239,display:{Name:'[{"text":"Arrow of Slowness","italic":false}]'},CustomPotionEffects:[{Id:2,Duration:140,Amplifier:0}]}

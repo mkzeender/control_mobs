@@ -1,0 +1,17 @@
+{
+	"condition": "entity_properties",
+	"entity": "this",
+	"predicate": {
+		"type_specific": {
+			"type": "player",
+			"looking_at": {
+				"type": "#mctrlmobs:allmobs",
+				"distance": {
+					"absolute": {
+						"max": 15
+					}
+				}
+			}
+		}
+	}
+}
