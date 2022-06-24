@@ -1,0 +1,24 @@
+[
+	{
+		"condition": "weather_check",
+		"raining": false
+	},
+	{
+		"condition": "location_check",
+		"predicate": {
+			"dimension": "minecraft:overworld",
+			"light": {
+				"light": 15
+			}
+		}
+	},
+	{
+		"condition": "entity_properties",
+		"entity": "this",
+		"predicate": {
+			"flags": {
+				"is_on_fire": false
+			}
+		}
+	}
+]

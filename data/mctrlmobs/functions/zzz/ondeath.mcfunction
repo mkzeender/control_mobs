@@ -42,7 +42,7 @@ execute if entity @s[scores={gillair=300..},tag=imaquatic] run tellraw @a [{"sel
 execute if entity @s[tag=imhydrophobic                         ] at @s if block ~ ~1 ~ water run tellraw @a [{"selector":"@s"}, {"text":" dissolved in water"}]
 execute if entity @s[tag=imhydrophobic] at @s unless block ~ ~1 ~ water if block ~ ~ ~ water run tellraw @a [{"selector":"@s"}, {"text":" dissolved in water"}]
 
-execute if entity @s[tag=imsunburned,scores={daytime=0..12000},nbt={Dimension:"minecraft:overworld"}] at @s if blocks ~ ~1 ~ ~ ~200 ~ 0 200 0 masked run tellraw @a [{"selector":"@s"}, {"text":" forgot sunscreen"}]
+execute if entity @s[tag=imsunburned,predicate=mctrlmobs:do_burn] run tellraw @a [{"selector":"@s"}, {"text":" forgot sunscreen"}]
 
 
 # get rid of old tags

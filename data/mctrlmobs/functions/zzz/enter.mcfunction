@@ -187,7 +187,7 @@ execute if entity @e[tag=iscontrolled,type=minecraft:enderman] run tag @s add im
 
 execute if entity @e[tag=iscontrolled,type=minecraft:warden] run effect give @s minecraft:slowness 1000000 2 true
 execute if entity @e[tag=iscontrolled,type=minecraft:warden] run effect give @s minecraft:blindness 1000000 0 true
-execute if entity @e[tag=iscontrolled,type=minecraft:warden] run effect give @s minecraft:darkness 1000000 0 true
+execute if entity @e[tag=iscontrolled,type=minecraft:warden] run scoreboard players set @s mctrlmobs.tick.sound.warden 80
 execute if entity @e[tag=iscontrolled,type=minecraft:warden] run tag @s add imawarden
 
 
@@ -207,4 +207,5 @@ execute if score @s mmobhealth > @s mhealth run effect give @s minecraft:resista
 title @a actionbar [{"selector":"@s"}, {"color":"yellow", "text":" is now a "}, {"selector":"@e[tag=iscontrolled]"}]
 tellraw @a [{"selector":"@s"}, {"color":"yellow", "text":" is now a "}, {"selector":"@e[tag=iscontrolled]"}]
 
-
+# ambient sound tick
+scoreboard players set @s mctrlmobs.tick.sound.ambient 300

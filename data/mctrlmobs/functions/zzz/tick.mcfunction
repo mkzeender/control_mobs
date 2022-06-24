@@ -84,15 +84,7 @@ scoreboard players set @a[scores={mctrdeathcounter=1..,mctrdeathwait=1..}] mctrd
 execute as @a[tag=imamob,scores={mhealed=1}] run scoreboard players operation @s mmobhealth = @s mhealth
 
 #give player regen until they are at the correct health
-execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] if score @s mmobhealth >= @s mhealth unless entity @s[nbt={ActiveEffects:[{Id:10b,Amplifier:5b}]}] run effect give @s regeneration 100000 5 true
-execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] if score @s mmobhealth <= @s mhealth run effect clear @s minecraft:regeneration
-
-#decrease player health if needed
-execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] if score @s mmobhealth < @s mhealth run effect give @s poison 1 4 true
-execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] if score @s mmobhealth >= @s mhealth run effect clear @s poison
-
-execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] if score @s mmobhealth = @s mhealth run scoreboard players set @s mhealed 1
-
+execute as @a[tag=imamob] unless entity @s[scores={mhealed=1}] run function mctrlmobs:zzz/sethealth
 
 
 
@@ -158,9 +150,8 @@ execute as @a[tag=imanevoker] at @s unless entity @s[nbt={Inventory:[{id:"minecr
 execute as @a[tag=idontwither] run effect clear @s minecraft:wither
 
 # burn in sunlight tick
-execute as @a[tag=imsunburned,scores={daytime=0..12000},nbt={Dimension:"minecraft:overworld"}] at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 air replace fire
-execute as @a[tag=imsunburned,scores={daytime=0..12000},nbt={Dimension:"minecraft:overworld"}] at @s if blocks ~ ~ ~ ~ ~200 ~ 0 200 0 masked run setblock ~ ~ ~ fire
-execute store result score @a daytime run time query daytime
+execute as @a[tag=imsunburned, predicate=mctrlmobs:do_burn] at @s run summon minecraft:arrow ~ ~3 ~ {damage:0.0000000001d,Fire:200s, pickup:0b, Silent:1b, Motion:[0d, -1d, 0d], Tags:["mctrlmobs.firearrow"], CustomPotionEffects:[{id:10b, ShowParticles:0b, Ambient:1b, Amplifier:5b, Duration:1}]}
+kill @e[type=arrow, tag=mctrlmobs.firearrow, nbt={inGround:1b}]
 
 #drown in air tick
 execute as @a[scores={gillair=300..},tag=imaquatic] run effect give @s wither 2 1 true

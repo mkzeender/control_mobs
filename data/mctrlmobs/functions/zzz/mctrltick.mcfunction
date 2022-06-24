@@ -29,6 +29,11 @@ execute if entity @s[nbt={SelectedItem:{id:"minecraft:crossbow"}}] unless entity
 data modify entity @e[tag=iscontrolled,limit=1] Fire set from entity @s Fire
 
 
+# ambient sound tick
+scoreboard players remove @s mctrlmobs.tick.sound.ambient 1
+execute if score @s mctrlmobs.tick.sound.ambient matches ..0 run function mctrlmobs:zzz/aesthetic/playsound
+
+
 #--------------------------depending on what entity the player is controlling, do these things each tick----------------------
 
 #convert arrows to infinity arrows
@@ -36,7 +41,12 @@ execute as @e[type=#minecraft:arrows,distance=0..2] run data merge entity @s {pi
 #convert tridents to infinity tridents
 execute as @e[type=minecraft:trident,nbt={Trident:{tag:{CustomTags:["mctrlmobs.illegal"]}}}] run data merge entity @s {pickup:0b}
 
+#freeze immune mobs
+execute if entity @e[tag=iscontrolled,type=#freeze_immune_entity_types] if block ~ ~ ~ powder_snow unless entity @s[nbt={Inventory:[{Slot:100b,id:"minecraft:leather_boots"}]}] run function mctrlmobs:zzz/inventory/drop/armor.feet
+execute if entity @e[tag=iscontrolled,type=#freeze_immune_entity_types] if block ~ ~ ~ powder_snow unless entity @s[nbt={Inventory:[{Slot:100b,id:"minecraft:leather_boots"}]}] run item replace entity @s armor.feet with leather_boots{Unbreakable:1b,CustomTags:["mctrlmobs.illegal"]}
 
+
+#---------------------------individual mobs------------------------------------------------------------------
 
 #blaze fireball cooldown of 5 seconds
 execute if entity @e[tag=iscontrolled,type=blaze] if entity @s[scores={mctrlmobs.itemcooldown=0}] unless entity @s[nbt={Inventory:[{id:"minecraft:snowball"}]}] run scoreboard players set @s mctrlmobs.itemcooldown 200
@@ -83,7 +93,11 @@ execute if entity @e[tag=iscontrolled,type=ghast] if entity @s[scores={mctrlmobs
 execute if entity @e[tag=iscontrolled,type=stray] unless entity @s[nbt={Inventory:[{id:"minecraft:tipped_arrow"}]}] run function mctrlmobs:zzz/inventory/drop/inventory.7
 execute if entity @e[tag=iscontrolled,type=stray] unless entity @s[nbt={Inventory:[{id:"minecraft:tipped_arrow"}]}] run item replace entity @s inventory.7 with tipped_arrow{CustomTags:["mctrlmobs.illegal"],CustomPotionColor:11594239,display:{Name:'[{"text":"Arrow of Slowness","italic":false}]'},CustomPotionEffects:[{Id:2,Duration:140,Amplifier:0}]}
 
+#convert mobs
+execute if entity @e[tag=iscontrolled,type=zombie  ] if entity @s[nbt={Air:0s}] run function mctrlmobs:zzz/converters/drowned
+execute if entity @e[tag=iscontrolled,type=husk    ] if entity @s[nbt={Air:0s}] run function mctrlmobs:zzz/converters/husk
+execute if entity @e[tag=iscontrolled,type=skeleton] if entity @s[nbt={TicksFrozen:140}] run function mctrlmobs:zzz/converters/stray
 
 
 #warden
-execute if entity @e[tag=iscontrolled,type=warden] unless entity @s[nbt={Inventory:[{Slot:1b,id:"minecraft:carrot_on_a_stick"}]}] unless entity @s[scores={mctrlmobs.itemcooldown=1..}] run item replace entity @s hotbar.1 with minecraft:carrot_on_a_stick{display:{Name:'[{"text":"Sonic Boom","bold":true}]'},CustomTags:["mctrlmobs.illegal"]} 1
+execute if entity @e[tag=iscontrolled,type=warden] run function mctrlmobs:zzz/warden/tick
