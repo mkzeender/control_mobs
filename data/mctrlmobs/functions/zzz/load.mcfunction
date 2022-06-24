@@ -21,6 +21,9 @@ scoreboard objectives add dragonsecond dummy
 scoreboard objectives add dragoncountdown dummy
 scoreboard objectives add dragontick dummy
 
+scoreboard objectives add mctrlmobs.tick.sound.ambient dummy
+scoreboard objectives add mctrlmobs.tick.sound.warden dummy
+
 scoreboard objectives add mctrlmobs.itemcooldown dummy
 
 scoreboard objectives add zpiglinangertmp dummy
