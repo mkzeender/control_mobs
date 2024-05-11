@@ -1,1 +1,1 @@
-give @s clock{Enchantments:[{}],hypnostick:1b,display:{Name:'{"text":"Mob Mind Hypnotizer"}'}}
+give @s clock[minecraft:item_name='"Mob Controller"', minecraft:custom_data={hypnostick:1b},minecraft:enchantment_glint_override=True]

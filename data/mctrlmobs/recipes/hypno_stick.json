@@ -1,5 +1,6 @@
 {
-  "type": "crafting_shapeless",
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
       "item": "minecraft:string"
@@ -9,6 +10,12 @@
     }
   ],
   "result": {
-    "item": "minecraft:knowledge_book"
+    "id": "minecraft:clock",
+    "count": 1,
+    "components": {
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:custom_data": "{hypnostick:1b}",
+      "minecraft:item_name": "\"Mob Controller\""
+    }
   }
 }
