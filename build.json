@@ -1,7 +1,7 @@
 {
     "description": "Take over a mob's body and assume its abilities",
-    "data_version":43,
-    "resource_version": 15,
+    "data_version":10,
+    "resource_version": 0,
     "datapack_name": "Control the Mobs",
     "world_dirs": [
        "C:/Users/MkZee/AppData/Roaming/ATLauncher/instances/Minecraft24w18awithFabric/saves/control_mobs"
